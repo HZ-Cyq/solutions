@@ -1,11 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="572e92d8-2c2f-42f1-a045-411691ccc96d" name="Default Changelist" comment="" />
+    <list default="true" id="572e92d8-2c2f-42f1-a045-411691ccc96d" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Annotation/DeprecatedTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Annotation/DeprecatedTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Annotation/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Annotation/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/AA.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/AA.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TestGit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestGit.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="chenyuuqun" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -25,7 +42,9 @@
     </option>
   </component>
   <component name="ProjectId" id="1YWrWSX3tASc2k2GhTz1M7Beg4b" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -36,7 +55,68 @@
     <property name="project.structure.last.edited" value="Problems" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+  </component>
+  <component name="RunManager" selected="Application.DeprecatedTest">
+    <configuration name="DeprecatedTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Annotation.DeprecatedTest" />
+      <module name="chenyuuqun" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Annotation.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestGit" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="TestGit" />
+      <module name="chenyuuqun" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AA.testBase" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="chenyuuqun" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="AA" />
+      <option name="METHOD_NAME" value="testBase" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AA.testMergeSortedArrays" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="chenyuuqun" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="AA" />
+      <option name="METHOD_NAME" value="testMergeSortedArrays" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AA.testMergeTowSortedLists" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="chenyuuqun" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="AA" />
+      <option name="METHOD_NAME" value="testMergeTowSortedLists" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.DeprecatedTest" />
+        <item itemvalue="JUnit.AA.testMergeSortedArrays" />
+        <item itemvalue="JUnit.AA.testBase" />
+        <item itemvalue="JUnit.AA.testMergeTowSortedLists" />
+        <item itemvalue="Application.TestGit" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -50,5 +130,86 @@
       <updated>1583069222909</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="320" y="115" width="968" height="669" key="#Notifications" timestamp="1583156580954">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="320" y="115" width="968" height="669" key="#Notifications/0.0.1440.900@0.0.1440.900" timestamp="1583156580954" />
+    <state x="562" y="298" width="660" height="304" key="#com.intellij.codeInsight.template.impl.EditVariableDialog" timestamp="1583141754561">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="562" y="298" width="660" height="304" key="#com.intellij.codeInsight.template.impl.EditVariableDialog/0.0.1440.900@0.0.1440.900" timestamp="1583141754561" />
+    <state width="724" height="159" key="GridCell.Tab.0.bottom" timestamp="1583482651694">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="724" height="159" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1583482651694" />
+    <state width="724" height="159" key="GridCell.Tab.0.center" timestamp="1583482651691">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="724" height="159" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1583482651691" />
+    <state width="724" height="159" key="GridCell.Tab.0.left" timestamp="1583482651689">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="724" height="159" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1583482651689" />
+    <state width="724" height="159" key="GridCell.Tab.0.right" timestamp="1583482651693">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="724" height="159" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1583482651693" />
+    <state width="1398" height="303" key="GridCell.Tab.1.bottom" timestamp="1583294146354">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="303" key="GridCell.Tab.1.bottom/0.0.1440.900@0.0.1440.900" timestamp="1583294146354" />
+    <state width="1398" height="303" key="GridCell.Tab.1.center" timestamp="1583294146352">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="303" key="GridCell.Tab.1.center/0.0.1440.900@0.0.1440.900" timestamp="1583294146352" />
+    <state width="1398" height="303" key="GridCell.Tab.1.left" timestamp="1583294146351">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="303" key="GridCell.Tab.1.left/0.0.1440.900@0.0.1440.900" timestamp="1583294146351" />
+    <state width="1398" height="303" key="GridCell.Tab.1.right" timestamp="1583294146353">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="303" key="GridCell.Tab.1.right/0.0.1440.900@0.0.1440.900" timestamp="1583294146353" />
+    <state x="258" y="112" key="Maven.ArtifactSearchDialog" timestamp="1583151692398">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="258" y="112" key="Maven.ArtifactSearchDialog/0.0.1440.900@0.0.1440.900" timestamp="1583151692398" />
+    <state x="103" y="31" width="1192" height="722" key="SettingsEditor" timestamp="1583294119594">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="103" y="31" width="1192" height="722" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1583294119594" />
+    <state x="312" y="175" width="816" height="550" key="find.popup" timestamp="1583152091906">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="312" y="175" width="816" height="550" key="find.popup/0.0.1440.900@0.0.1440.900" timestamp="1583152091906" />
+    <state x="385" y="190" width="670" height="742" key="search.everywhere.popup" timestamp="1583482158965">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="385" y="190" width="670" height="742" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1583482158965" />
+    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup/0.23.1440.821@0.23.1440.821" timestamp="1583210907906" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/AA.java</url>
+          <line>94</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
