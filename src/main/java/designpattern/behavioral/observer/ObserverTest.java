@@ -14,5 +14,8 @@ public class ObserverTest {
         subject.addObserver(observer1);
         subject.addObserver(observer2);
         subject.notifyObservers(new Message());
+
+        subject.removeObserver(observer1);
+        subject.notifyObservers(new Message());
     }
 }

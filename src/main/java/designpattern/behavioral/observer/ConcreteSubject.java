@@ -13,6 +13,7 @@ public class ConcreteSubject implements  Subject {
     }
 
     public void removeObserver(Observer observer) {
+        System.out.println("remove observer: " + observer);
         observers.remove(observer);
     }
 
