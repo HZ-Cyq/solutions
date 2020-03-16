@@ -1,7 +1,7 @@
 package designpattern.behavioral.observer.eventbus;
 
 import com.google.common.eventbus.AsyncEventBus;
-import com.google.common.eventbus.EventBus;
+import designpattern.behavioral.observer.eventbus.realization.EventBus;
 
 import java.util.List;
 import java.util.concurrent.Executors;
