@@ -19,7 +19,11 @@ public class Observer1 {
     }
 
     @Subscribe
-    public void handleRegSuccess(MessageInt userId) {
-        System.out.println("Observer1 处理MessageInt类型的信息：" + userId.getVal());
+    public void handleRegSuccess1(MessageInt userId) {
+        System.out.println("Observer1.handleRegSuccess1 处理MessageInt类型的信息：" + userId.getVal());
+    }
+    @Subscribe
+    public void handleRegSuccess2(MessageInt userId) {
+        System.out.println("Observer1.handleRegSuccess2 处理MessageInt类型的信息：" + userId.getVal());
     }
 }

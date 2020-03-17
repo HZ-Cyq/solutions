@@ -42,6 +42,17 @@ public class ObserverRegistry {
         return matchedObservers;
     }
 
+    /**
+     * 返回observer类中所有的observerActions
+     * key是eventType(含有Subscribe标签的方法的参数类型),value是ObserverAction的集合
+     *
+     * 比如这个方法传入的参数是Observer1的实例observer1.那么返回值是这样的：
+     * <MessageInt,{ObserverAction(observer,handleRegSuccess1),ObserverAction(observer,handleRegSuccess2)}>
+     * <MessageLong,{ObserverAction(observer,handleRegSuccess)}>
+     * <MessageLongSub,{ObserverAction(observer,handleRegSuccess)}>
+     * @param observer
+     * @return
+     */
     private Map<Class<?>, Collection<ObserverAction>> findAllObserverActions(Object observer) {
         Map<Class<?>, Collection<ObserverAction>> observerActions = new HashMap<>();
         Class<?> clazz = observer.getClass();
@@ -56,6 +67,11 @@ public class ObserverRegistry {
         return observerActions;
     }
 
+    /**
+     * 返回clazz类中含有Subscribe标签的方法
+     * @param clazz
+     * @return
+     */
     private List<Method> getAnnotatedMethods(Class<?> clazz) {
         List<Method> annotatedMethods = new ArrayList<>();
         for (Method method : clazz.getDeclaredMethods()) {

@@ -1,7 +1,7 @@
 package designpattern.behavioral.observer.eventbus;
 
 import com.google.common.eventbus.AsyncEventBus;
-import designpattern.behavioral.observer.eventbus.realization.EventBus;
+import com.google.common.eventbus.EventBus;
 
 import java.util.List;
 import java.util.concurrent.Executors;
@@ -31,7 +31,9 @@ public class UserController {
      */
     public void setRegObserver(List<Object> observers) {
         System.out.println("将观察者注册到eventBus中");
-        observers.forEach(observer -> eventBus.register(observer));
+        for(Object observer: observers) {
+            eventBus.register(observer);
+        }
     }
 
     public Long register(String telephone, String password) {
