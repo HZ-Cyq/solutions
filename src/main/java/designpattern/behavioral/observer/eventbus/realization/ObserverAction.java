@@ -20,6 +20,7 @@ public class ObserverAction {
 
     public void execute(Object event) {
         try {
+            System.out.printf("%s method invoke. target: %s, event: %s\n",method.getName(),target.toString(),event.toString());
             method.invoke(target,event);
         } catch (InvocationTargetException | IllegalAccessException e) {
             e.printStackTrace();

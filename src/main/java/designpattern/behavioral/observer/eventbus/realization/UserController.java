@@ -1,6 +1,5 @@
 package designpattern.behavioral.observer.eventbus.realization;
 
-import com.google.common.eventbus.AsyncEventBus;
 import designpattern.behavioral.observer.eventbus.MessageInt;
 import designpattern.behavioral.observer.eventbus.MessageLong;
 import designpattern.behavioral.observer.eventbus.MessageLongSub;
@@ -8,6 +7,7 @@ import designpattern.behavioral.observer.eventbus.UserService;
 
 import java.util.List;
 import java.util.concurrent.Executors;
+import java.util.logging.Logger;
 
 /**
  * @author playcrab_chenyuqun
@@ -22,9 +22,9 @@ public class UserController {
      */
     public UserController() {
         // 同步阻塞
-        eventBus = new EventBus();
+        // eventBus = new EventBus();
         // 异步非阻塞
-        // eventBus = new AsyncEventBus(Executors.newFixedThreadPool(DEFAULT_EVENT_BUS_THREAD_POOL_SIZE));
+        eventBus = new AsyncEventBus(Executors.newFixedThreadPool(DEFAULT_EVENT_BUS_THREAD_POOL_SIZE));
     }
 
     /**
@@ -53,6 +53,7 @@ public class UserController {
         System.out.println("发送messageInt类型的信息");
         eventBus.post(messageInt);
 
+        System.out.println("register方法返回userId");
         return userId;
     }
 }

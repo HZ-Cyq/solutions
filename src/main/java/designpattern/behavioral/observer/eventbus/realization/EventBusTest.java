@@ -1,6 +1,5 @@
 package designpattern.behavioral.observer.eventbus.realization;
 
-import designpattern.behavioral.observer.eventbus.UserController;
 import org.junit.Test;
 
 import java.util.LinkedList;

@@ -13,6 +13,9 @@ import java.util.concurrent.CopyOnWriteArraySet;
  */
 
 public class ObserverRegistry {
+    /**
+     * key是EventType,value是处理这个EventType的ObserverAction集合
+     */
     private ConcurrentMap<Class<?>, CopyOnWriteArraySet<ObserverAction>> registry = new ConcurrentHashMap<>();
 
     public void register(Object observer) {
