@@ -11,4 +11,10 @@ public class TestInherit {
         Son son = new Son(2);
         son.printA();
     }
+    @Test
+    public void testCast() {
+        Father father = new Son(2);
+        Son son = (Son) father;
+        son.printA();
+    }
 }

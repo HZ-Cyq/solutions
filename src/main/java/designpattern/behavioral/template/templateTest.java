@@ -1,5 +1,6 @@
 package designpattern.behavioral.template;
 
+import designpattern.behavioral.template.callBack.AClass;
 import junit.framework.TestCase;
 import org.junit.Test;
 
@@ -11,6 +12,9 @@ import java.util.List;
  */
 public class templateTest extends TestCase {
 
+    /**
+     * setUp方法是在TestCase的runBare方法里的模板方法，在子类中实现。
+     */
     @Override
     public void setUp() {
         System.out.println("before class :set up");
@@ -37,4 +41,10 @@ public class templateTest extends TestCase {
         System.out.println("hello");
     }
 
+    /**
+     * 测试回调方法
+     */
+    public void testCallBack() {
+        AClass.method();
+    }
 }
