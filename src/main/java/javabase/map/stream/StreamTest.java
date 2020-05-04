@@ -1,4 +1,4 @@
-package map.stream;
+package javabase.map.stream;
 
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;

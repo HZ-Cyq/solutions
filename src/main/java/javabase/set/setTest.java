@@ -1,4 +1,4 @@
-package set;
+package javabase.set;
 
 import com.google.common.collect.Sets;
 import org.junit.Test;

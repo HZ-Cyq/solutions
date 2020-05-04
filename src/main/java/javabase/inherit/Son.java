@@ -1,4 +1,4 @@
-package inherit;
+package javabase.inherit;
 
 /**
  * @author playcrab_chenyuqun

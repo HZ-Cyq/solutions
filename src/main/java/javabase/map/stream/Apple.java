@@ -1,4 +1,4 @@
-package map.stream;
+package javabase.map.stream;
 
 /**
  * @author playcrab_chenyuqun

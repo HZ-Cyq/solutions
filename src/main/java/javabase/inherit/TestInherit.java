@@ -1,4 +1,4 @@
-package inherit;
+package javabase.inherit;
 
 import org.junit.Test;
 
