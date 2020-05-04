@@ -3,6 +3,7 @@ package designpattern.behavioral.strategy;
 /**
  * @author playcrab_chenyuqun
  */
+@StrategyAnnotation(type = "A")
 public class ConcreteStrategyA implements Strategy{
     @Override
     public void algorithm() {
