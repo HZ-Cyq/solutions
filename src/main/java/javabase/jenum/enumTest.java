@@ -19,6 +19,12 @@ public class enumTest {
     public void test1() {
         System.out.println(getRe());
     }
+
+    @Test
+    public void test2() {
+        SeasonEnum seasonEnum = SeasonEnum.valueOf("SPRING");
+        System.out.println(seasonEnum);
+    }
     private static double getRe() {
         return RE;
     }
