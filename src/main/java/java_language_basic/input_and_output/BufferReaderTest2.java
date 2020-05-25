@@ -7,7 +7,7 @@ import java.io.InputStreamReader;
 /**
  * @author playcrab_chenyuqun
  */
-public class BufferReaderTest {
+public class BufferReaderTest2 {
     public static void main(String[] args) throws IOException {
         /*BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         System.out.println("输入一个整数：");

@@ -1,7 +1,9 @@
 package multithreading;
 
+import com.google.common.collect.Maps;
 import org.junit.Test;
 
+import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -92,5 +94,16 @@ public class ConcurrentMapTest {
 
         System.out.println("------" + map.get("key") + "------");
         executorService.shutdown();
+    }
+
+    @Test
+    public void testMap() {
+        Map<String , Integer> map = Maps.newHashMap();
+        map.put("1",1);
+        map.put("2",2);
+        map.put("3",3);
+        for(String key: map.keySet()) {
+            System.out.println("key: " + key + ", value: " + map.get(key));
+        }
     }
 }

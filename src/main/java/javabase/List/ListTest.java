@@ -3,6 +3,9 @@ package javabase.List;
 import com.google.common.collect.Lists;
 import org.junit.Test;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -20,6 +23,56 @@ public class ListTest {
         for(int i = 0; i < list.size(); i++) {
             System.out.println(list.get(i));
         }
-        System.out.println(list.indexOf("7"));
+        System.out.println("index of 0: " + list.indexOf("0"));
+        System.out.println("index of 1: " + list.indexOf("1"));
+        System.out.println("index of 7: " + list.indexOf("7"));
+        System.out.println("last element: " + list.get(list.size() - 1));
+    }
+
+    @Test
+    public void testFor() {
+        List<String> list = null;
+        for(String value : list) {
+            System.out.println(value);
+        }
+    }
+
+    @Test
+    public void testLong() {
+        long a = 100000000;
+        long b = a * 10000000;
+        System.out.println(b);
+    }
+
+    @Test
+    public void shuffle() {
+        List<String> list1 = Lists.newArrayList();
+        list1.add("1");
+        list1.add("2");
+        list1.add("3");
+
+        List<String> list2 = new ArrayList<>(list1);
+        Collections.shuffle(list2);
+        Collections.shuffle(list2);
+
+        System.out.println("list1:");
+        list1.forEach(v -> System.out.println(v));
+        System.out.println("list2:");
+        list2.forEach(v -> System.out.println(v));
+    }
+
+    @Test
+    public void isEmpty() {
+        List<String> list = Lists.newArrayList();
+        System.out.println(list.isEmpty());
+        String str1 = "hello";
+        String str2 = "world";
+        list.add(str1);
+        System.out.println(list.isEmpty());
+        list.add(str2);
+        System.out.println(list.isEmpty());
+        list.remove(str1);
+        list.remove(str2);
+        System.out.println(list.isEmpty());
     }
 }

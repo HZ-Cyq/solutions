@@ -5,7 +5,7 @@ import java.util.Scanner;
 /**
  * @author playcrab_chenyuqun
  */
-public class ScannerTest {
+public class ScannerTest1 {
     public static void main(String args[]) {
         System.out.println("请输入若干个数据，每输入一个数据用回车确认");
         System.out.println("最后输入一个非数字结束操作");

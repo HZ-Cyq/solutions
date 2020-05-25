@@ -10,7 +10,7 @@ import java.io.RandomAccessFile;
 /**
  * @author playcrab_chenyuqun
  */
-public class FileTest {
+public class FileTest3 {
 
     /**
      * 测试File类

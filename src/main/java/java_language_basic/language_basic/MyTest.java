@@ -2,6 +2,9 @@ package java_language_basic.language_basic;
 
 import org.junit.Test;
 
+import java.math.BigDecimal;
+import java.util.Map;
+
 /**
  * @author playcrab_chenyuqun
  */
@@ -28,6 +31,21 @@ public class MyTest {
         } catch (MyException e) {
             e.printStackTrace();
         }
+    }
+
+    @Test
+    public void testLong() {
+        Long a = 10000000000000L;
+        Long b = 300L;
+        double re = a * 1.0 / b;
+        System.out.println(re);
+    }
+
+    @Test
+    public void testFloor() {
+        double a = 1.003;
+        System.out.println("向上取整" + (int)Math.ceil(a));
+        System.out.println("向下取整" + (int)Math.floor(a));
     }
 
     private void throwException() throws MyException {

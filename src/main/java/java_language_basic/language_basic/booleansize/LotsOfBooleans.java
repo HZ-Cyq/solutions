@@ -1,4 +1,4 @@
-package java_language_basic.language_basic.booleansiez;
+package java_language_basic.language_basic.booleansize;
 
 /**
  * @author playcrab_chenyuqun

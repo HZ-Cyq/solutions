@@ -69,4 +69,21 @@ public class JsonObjectTest {
             System.out.println(json.toString());
         });
     }
+
+    @Test
+    public void testPut() {
+        JSONObject json = new JSONObject();
+        json.put("hello","world");
+        json.put("hello","newWorld");
+        System.out.println(json.getString("hello"));
+    }
+
+    @Test
+    public void testJson() {
+        JSONObject json = new JSONObject();
+        json.put("hello",1);
+        json.put("world",1.0);
+        System.out.println(json.getDouble("hello"));
+        System.out.println(json.getDouble("world"));
+    }
 }
