@@ -106,4 +106,19 @@ public class ConcurrentMapTest {
             System.out.println("key: " + key + ", value: " + map.get(key));
         }
     }
+
+    /**
+     *  测试putIfAbsent和put的返回值：返回旧值【没有就是null】
+     */
+    @Test
+    public void testPutIfAbsent() {
+        Map<String, String> map = Maps.newHashMap();
+        String re1 = map.putIfAbsent("1","1");
+        String re2 = map.putIfAbsent("1","2");
+        System.out.println(re1 + "," +re2);
+
+        String re3 = map.put("2","3");
+        String re4 = map.put("1","3");
+        System.out.println(re3 + "," +re4);
+    }
 }

@@ -15,4 +15,11 @@ public class initTest {
        System.out.println(initAttributeTest.getAnLong());
        System.out.println(initAttributeTest.getStr());
     }
+    
+    @Test
+    public void testLocalAttribute() {
+        boolean bool = false;
+        System.out.println(bool);
+    }
+    
 }
