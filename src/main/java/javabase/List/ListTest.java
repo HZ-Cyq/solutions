@@ -1,8 +1,10 @@
 package javabase.List;
 
+import com.alibaba.fastjson.JSONObject;
 import com.google.common.collect.Lists;
 import org.junit.Test;
 
+import javax.swing.*;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
@@ -74,5 +76,21 @@ public class ListTest {
         list.remove(str1);
         list.remove(str2);
         System.out.println(list.isEmpty());
+    }
+
+    @Test
+    public void testGet() {
+        List<JSONObject> list = Lists.newArrayList(new JSONObject(), new JSONObject());
+
+        JSONObject json1 = new JSONObject();
+        json1.put("0","0");
+        list.add(json1);
+
+        // 这里的old是值，不是引用
+        JSONObject old = list.get(0);
+        old = new JSONObject();
+
+        System.out.println(old);
+        System.out.println(list);
     }
 }

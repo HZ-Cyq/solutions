@@ -68,7 +68,6 @@ public class AnnotationTest {
     }
 
     public static void iteratorAnnotations(Method method) {
-
         // 判断 somebody() 方法是否包含MyAnnotation注解
         if(method.isAnnotationPresent(MyAnnotation.class)){
             // 获取该方法的MyAnnotation注解实例

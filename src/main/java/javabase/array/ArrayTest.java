@@ -1,5 +1,7 @@
 package javabase.array;
 
+import com.alibaba.fastjson.JSONObject;
+import com.dingtalk.api.response.OapiReportListResponse;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -101,6 +103,10 @@ public class ArrayTest {
 
         int[] array8 = Arrays.copyOfRange(array, array.length, array.length + 3);
         print_array(array8);
+
+        // 如果from == to,会返回一个长度为0的数组
+        int[] array9 = Arrays.copyOfRange(array, 3, 3);
+        System.out.println("arrray9.length: " + array9.length);
     }
 
     private void print_array(int[] array) {
@@ -108,5 +114,17 @@ public class ArrayTest {
             System.out.printf("%d ", array[i]);
         }
         System.out.println();
+    }
+
+    @Test
+    public void testInit() {
+        // 初始化Json的数组，元素是null
+        JSONObject[] array = new JSONObject[2];
+        array[0] = new JSONObject();
+        array[0].clear();
+//        System.
+        for(int i = 0; i < array.length; i++) {
+            System.out.println(array[i]);
+        }
     }
 }

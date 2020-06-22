@@ -121,4 +121,23 @@ public class ConcurrentMapTest {
         String re4 = map.put("1","3");
         System.out.println(re3 + "," +re4);
     }
+
+    @Test
+    public void testIterator() {
+        Map<String, String> map = Maps.newHashMap();
+        map.put("1","1");
+        map.put("2","2");
+        map.put("3","3");
+        System.out.println(map.values().stream().iterator().next());
+    }
+
+    @Test
+    public void test1() {
+        int a = 10;
+        print(a);
+    }
+
+    private void print(long a) {
+        System.out.println(a);
+    }
 }
