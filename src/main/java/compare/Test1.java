@@ -1,6 +1,7 @@
 package compare;
 
 import com.google.common.collect.Lists;
+import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.Collections;
@@ -11,21 +12,19 @@ import java.util.List;
  * @author playcrab_chenyuqun
  */
 public class Test1 {
+
     @Test
     public void testEquals() {
         String a = "123";
         String b = "123";
         String c = new String("123");
 
-        System.out.println(a == b);
-        System.out.println(b == c);
-        System.out.println(a.equals(b));
-        System.out.println(b.equals(c));
-
-        // "=="作用于引用：引用是否相等。
+        Assert.assertTrue(a == b);
+        Assert.assertFalse(a == c);
+        Assert.assertTrue(a.equals(c));
+        // "=="作用于引用：引用是否相等。与引用类型无关
         Object d = c;
-        System.out.println(d.equals(c));
-        System.out.println(c == d);
+        Assert.assertTrue(d == c);
     }
 
     @Test
