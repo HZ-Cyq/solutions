@@ -5,6 +5,9 @@ package reflect;
  */
 public class MyObject extends  MyObjectBase implements MyObjectsInterface {
     String attribute1;
+    public MyObject() {
+
+    }
     public MyObject(String attribute1) {
         this.attribute1 = attribute1;
     }

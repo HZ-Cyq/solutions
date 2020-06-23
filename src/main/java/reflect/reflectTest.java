@@ -3,10 +3,7 @@ package reflect;
 import org.junit.Assert;
 import org.junit.Test;
 
-import java.lang.reflect.Constructor;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
-import java.lang.reflect.Modifier;
+import java.lang.reflect.*;
 import java.util.Arrays;
 
 /**
@@ -101,5 +98,67 @@ public class reflectTest {
         Assert.assertTrue(myObjectCla.isAssignableFrom(myObjectCla));
         Assert.assertTrue(interfaceCla.isAssignableFrom(myObjectCla));
         Assert.assertTrue(baseCla.isAssignableFrom(myObjectCla));
+    }
+
+    /**
+     * 测试Class.isInstance方法:
+     */
+    @Test
+    public void testIsInstance() throws ClassNotFoundException {
+        Class myObjectCla = Class.forName("reflect.MyObject");
+        Class myObjectBaseCla = Class.forName("reflect.MyObjectBase");
+        MyObject myObject = new MyObject();
+        MyObjectBase myObjectBase = new MyObjectBase();
+
+        Assert.assertTrue(myObjectCla.isInstance(myObject));
+        Assert.assertFalse(myObjectCla.isInstance(myObjectBase));
+
+        Assert.assertTrue(myObjectBaseCla.isInstance(myObjectBase));
+        Assert.assertTrue(myObjectBaseCla.isInstance(myObject));
+    }
+
+    /**
+     * 测试Class.isPrimitive方法
+     *
+     * @throws ClassNotFoundException
+     */
+    @Test
+    public void testIsPrimitive() throws ClassNotFoundException {
+        Assert.assertTrue(Integer.TYPE.isPrimitive());
+        Assert.assertTrue(Short.TYPE.isPrimitive());
+        Assert.assertTrue(Byte.TYPE.isPrimitive());
+        Assert.assertTrue(Long.TYPE.isPrimitive());
+        Assert.assertTrue(Float.TYPE.isPrimitive());
+        Assert.assertTrue(Double.TYPE.isPrimitive());
+        Assert.assertTrue(Boolean.TYPE.isPrimitive());
+        Assert.assertTrue(Character.TYPE.isPrimitive());
+        Assert.assertTrue(Void.TYPE.isPrimitive());
+
+        Class myObjectCla = Class.forName("reflect.MyObject");
+        Assert.assertTrue(myObjectCla.isSynthetic());
+    }
+
+    /**
+     * 测试isSynthetic方法
+     */
+    @Test
+    public void testIsSynthetic() {
+        Assert.assertFalse(Proxy.newProxyInstance(Runnable.class.getClassLoader(), new Class[]{Runnable.class}, (proxy, method, args1) -> null).getClass().isSynthetic());
+        MyObject myObject = new MyObject();
+        Assert.assertFalse(myObject.getClass().isSynthetic());
+        Assert.assertFalse(Integer.class.isSynthetic());
+
+        Assert.assertTrue(((Runnable) System.out::println).getClass().isSynthetic());
+        Assert.assertTrue(((Runnable) () -> {}).getClass().isSynthetic());
+    }
+
+
+    /**
+     * 测试Class.toString方法
+     */
+    @Test
+    public void testToString() throws ClassNotFoundException {
+        Class myObjectCla = Class.forName("reflect.MyObject");
+        System.out.println(myObjectCla.toString());
     }
 }
