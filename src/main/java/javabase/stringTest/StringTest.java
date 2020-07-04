@@ -44,4 +44,14 @@ public class StringTest {
         String str = "";
         Strings.isNullOrEmpty(str);
     }
+
+    @Test
+    public void testVariablePara() {
+        test("name=%s&memo=%s", "Java技术栈");
+    }
+
+    private void test(String text, Object... params) {
+        String result = String.format(text, params, "666");
+        System.out.println(result);
+    }
 }

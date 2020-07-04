@@ -2,10 +2,15 @@ package javabase.array;
 
 import com.alibaba.fastjson.JSONObject;
 import com.dingtalk.api.response.OapiReportListResponse;
+import com.google.common.base.Preconditions;
+import com.google.common.collect.Lists;
+import com.sun.deploy.util.ArrayUtil;
 import org.junit.Assert;
 import org.junit.Test;
+import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
 
 import java.util.Arrays;
+import java.util.List;
 
 /**
  * @author playcrab_chenyuqun
@@ -123,8 +128,49 @@ public class ArrayTest {
         array[0] = new JSONObject();
         array[0].clear();
 //        System.
-        for(int i = 0; i < array.length; i++) {
+        for (int i = 0; i < array.length; i++) {
             System.out.println(array[i]);
         }
+
+        JSONObject json1 = new JSONObject();
+        JSONObject json2 = new JSONObject();
+        json1.put("hello1", "world1");
+        json2.put("hello2", "world2");
+
+        JSONObject[] jsonArray = {json1, json2};
+        int length = jsonArray.length;
+        Assert.assertTrue(length == 2);
+        Assert.assertEquals(jsonArray[0], json1);
+        Assert.assertEquals(jsonArray[1], json2);
     }
+
+    @Test
+    public void testPara() {
+        Integer[] integers = null;
+        printArray(integers);
+    }
+
+    public void printArray(Integer[] integers) {
+        Preconditions.checkNotNull(integers, "");
+        for (Integer i : integers) {
+            System.out.println(i);
+        }
+    }
+
+    @Test
+    public void testPrecondition() {
+
+        Integer i = null;
+//        Preconditions.checkNotNull(i, "i为Null");
+        Preconditions.checkNotNull(i, "i为null,%s", "hello");
+    }
+
+    @Test
+    public void test1() {
+        List<String> list = null;
+        for(String str : list) {
+            System.out.println(str);
+        }
+    }
+
 }
