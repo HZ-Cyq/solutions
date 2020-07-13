@@ -1,4 +1,4 @@
-package designpattern.structural.proxy.staticform.static2;
+package designpattern.structural.staticform.static2;
 
 import org.junit.Test;
 

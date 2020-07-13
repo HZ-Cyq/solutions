@@ -1,4 +1,4 @@
-package designpattern.structural.proxy.dynamic;
+package designpattern.structural.dynamic;
 
 import org.junit.Test;
 

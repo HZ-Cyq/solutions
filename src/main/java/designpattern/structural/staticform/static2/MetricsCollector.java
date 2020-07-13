@@ -1,7 +1,7 @@
-package designpattern.structural.proxy.staticform.static2;
+package designpattern.structural.staticform.static2;
 
 import com.google.common.collect.Lists;
-import designpattern.structural.proxy.RequestInfo;
+import designpattern.structural.RequestInfo;
 
 import java.util.ArrayList;
 

@@ -1,4 +1,4 @@
-package designpattern.structural.proxy.dynamic;
+package designpattern.structural.dynamic;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;

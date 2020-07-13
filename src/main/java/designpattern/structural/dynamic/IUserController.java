@@ -1,4 +1,4 @@
-package designpattern.structural.proxy.dynamic;
+package designpattern.structural.dynamic;
 
 public interface IUserController {
     UserVo login(String telephone, String password);

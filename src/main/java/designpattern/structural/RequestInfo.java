@@ -1,4 +1,4 @@
-package designpattern.structural.proxy;
+package designpattern.structural;
 
 /**
  * @author playcrab_chenyuqun
