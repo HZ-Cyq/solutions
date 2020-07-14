@@ -1,8 +1,8 @@
 package design_pattern.structural.proxy.staticform.static1;
 
-import design_pattern.structural.RequestInfo;
+import design_pattern.structural.proxy.RequestInfo;
+import design_pattern.structural.proxy.UserVo;
 import design_pattern.structural.proxy.staticform.static2.MetricsCollector;
-import design_pattern.structural.UserVo;
 
 /**
  * @author playcrab_chenyuqun
