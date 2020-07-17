@@ -5,7 +5,7 @@ import design_pattern.structural.bridge.bridge.sender.MsgSender;
 /**
  * @author chenyuqun
  */
-public class UrgencyNotification extends Notification{
+public class UrgencyNotification extends Notification {
     public UrgencyNotification(MsgSender msgSender) {
         super(msgSender);
     }

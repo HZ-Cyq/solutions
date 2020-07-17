@@ -20,7 +20,7 @@ public class ApplicationContext {
     private void initializeBeans() {
         alertRule = new AlertRule();
         alert = new Alert();
-
+        // 在这里设置handle的报警级别，设置报警级别的信息发送类型。
         Notification severeNotification = new SevereNotification(new TelephoneMsgSender());
         Notification urgencyNotification = new UrgencyNotification(new EmailMsgSender());
 
