@@ -173,4 +173,9 @@ public class ArrayTest {
         }
     }
 
+    @Test
+    public void test2() {
+        int[] array = {1,2,3};
+        Assert.assertEquals(3,array.length);
+    }
 }
