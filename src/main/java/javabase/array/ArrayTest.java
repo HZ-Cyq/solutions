@@ -168,14 +168,28 @@ public class ArrayTest {
     @Test
     public void test1() {
         List<String> list = null;
-        for(String str : list) {
+        for (String str : list) {
             System.out.println(str);
         }
     }
 
     @Test
     public void test2() {
-        int[] array = {1,2,3};
-        Assert.assertEquals(3,array.length);
+        int[] array = {1, 2, 3};
+        Assert.assertEquals(3, array.length);
+    }
+
+    @Test
+    public void test3() {
+        String str = "-11_2_3";
+        String[] array = str.split("_");
+        int a = Integer.parseInt(array[0]);
+        Assert.assertEquals(a, -11);
+    }
+
+    @Test
+    public void test4() {
+        List<String> list = Lists.newArrayList();
+        System.out.println(list.get(0));
     }
 }

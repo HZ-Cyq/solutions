@@ -11,6 +11,13 @@ public class Staff {
     private String sex;
     private String telephone;
 
+    public Staff(String name, int age, String sex, String telephone) {
+        this.name = name;
+        this.age = age;
+        this.sex = sex;
+        this.telephone = telephone;
+    }
+
     public String getName() {
         return name;
     }

@@ -3,7 +3,11 @@ package JSONObject;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
+import com.google.common.collect.Lists;
 import org.junit.Test;
+import reflect.MyObject;
+
+import java.util.List;
 
 /**
  * @author playcrab_chenyuqun
@@ -126,5 +130,23 @@ public class JsonObjectTest {
         System.out.println(staff.toString());
         String string = JSON.toJSONString(staff);
         System.out.println(string);
+    }
+
+    @Test
+    public void testGetObject() {
+        JSONObject json = new JSONObject();
+        List<Staff> list = Lists.newLinkedList();
+        Staff staff1 = new Staff("1", 1, "1", "1");
+        Staff staff2 = new Staff("1", 1, "1", "1");
+        Staff staff3 = new Staff("1", 1, "1", "1");
+        list.add(staff1);
+        list.add(staff2);
+        list.add(staff3);
+        json.put("staff", list);
+
+        List<Staff> jList = json.getObject("staff", List.class);
+        jList.add(staff1);
+
+        System.out.println(JSON.toJSONString(json));
     }
 }

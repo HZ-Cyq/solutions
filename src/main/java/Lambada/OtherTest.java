@@ -1,6 +1,7 @@
 package Lambada;
 
 import org.junit.Test;
+import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
 
 import java.util.Arrays;
 
@@ -16,7 +17,7 @@ public class OtherTest {
 
     @Test
     public void testInitArray() {
-        int[] array = new int[] {3,2,1};
+        int[] array = new int[]{3, 2, 1};
         initArray(array);
         Arrays.stream(array).forEach(System.out::println);
     }
@@ -25,4 +26,5 @@ public class OtherTest {
         a[0] = 1;
         a[1] = 2;
     }
+
 }
