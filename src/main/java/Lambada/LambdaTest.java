@@ -6,6 +6,7 @@ import java.util.Arrays;
 import java.util.IntSummaryStatistics;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import java.util.function.Consumer;
 import java.util.function.Supplier;
 import java.util.stream.Collectors;
@@ -92,4 +93,9 @@ public class LambdaTest {
         return t -> System.out.print(t + ",");
     }
 
+    @Test
+    public void testFP() {
+        Optional result = Stream.of("f", "ba", "hello").map(s -> s.length()).filter(l -> l <= 3).max((o1, o2) -> o1 - o2);
+        System.out.println(result.get()); // 输出2
+    }
 }

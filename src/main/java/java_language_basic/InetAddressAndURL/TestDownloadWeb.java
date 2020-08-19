@@ -15,7 +15,7 @@ import java.util.Map;
 public class TestDownloadWeb {
 
     public static void main(String[] args) throws IOException {
-        String url = "http://www.baidu.com";
+        String url = "http://www.fan7.cn";
         InputStream in = (new URL(url)).openStream();
         int c = -1;
         // 按字节的方式输入数据和输出数据
@@ -24,18 +24,4 @@ public class TestDownloadWeb {
         }
     }
 
-    @Test
-    public void testBigDecimal() {
-        int a = 1;
-        double b = a;
-        double c = 1.1;
-        System.out.println(b);
-        System.out.println(c);
-        Map<String, Integer> map = Maps.newHashMap();
-        map.put("hello",1);
-        Object d = map.get("hell");
-        Object e = map.get("hello");
-        System.out.println(d);
-        System.out.println(e);
-    }
 }
