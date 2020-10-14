@@ -4,6 +4,7 @@ import com.google.common.collect.Maps;
 import org.junit.Test;
 
 import java.util.Map;
+import java.util.TreeMap;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -139,5 +140,25 @@ public class ConcurrentMapTest {
 
     private void print(long a) {
         System.out.println(a);
+    }
+
+    @Test
+    public void testTreeMap() {
+        TreeMap<Integer, String> treeMap = Maps.newTreeMap();
+        treeMap.put(1,"1");
+        treeMap.put(3,"3");
+        treeMap.put(2,"2");
+        treeMap.put(4,"2");
+        treeMap.put(8,"2");
+        treeMap.put(9,"2");
+        treeMap.put(10,"2");
+        treeMap.put(11,"2");
+        treeMap.put(5,"2");
+        treeMap.put(6,"2");
+        treeMap.put(7,"2");
+
+        for(Map.Entry<Integer, String> entry : treeMap.entrySet()) {
+            System.out.println(entry.getKey());
+        }
     }
 }

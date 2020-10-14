@@ -54,4 +54,14 @@ public class StringTest {
         String result = String.format(text, params, "666");
         System.out.println(result);
     }
+
+    @Test
+    public void testSplit() {
+        String str = "-1_1_2";
+        String[] strs = str.split("_");
+        for (String s : strs) {
+            int i = Integer.parseInt(s);
+            System.out.println(i);
+        }
+    }
 }

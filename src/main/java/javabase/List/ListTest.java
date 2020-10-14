@@ -2,12 +2,14 @@ package javabase.List;
 
 import com.alibaba.fastjson.JSONObject;
 import com.google.common.collect.Lists;
+import org.junit.Assert;
 import org.junit.Test;
 
 import javax.swing.*;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -92,5 +94,42 @@ public class ListTest {
 
         System.out.println(old);
         System.out.println(list);
+    }
+
+    @Test
+    public void testAddAll() {
+        List<String> list = Lists.newArrayList();
+        List<String> list1 = null;
+        list.addAll(list1);
+        System.out.println(list);
+    }
+
+    @Test
+    public void testSubList() {
+        List<String> list = Lists.newArrayList();
+        list.add("0");
+        list.add("1");
+        list.add("2");
+        list.add("3");
+
+        // [0,1)
+        List<String> subList1 = list.subList(0,1);
+        subList1.forEach(System.out::println);
+        Assert.assertEquals(1, subList1.size());
+
+        List<String> subList2 = list.subList(4, 4);
+        Assert.assertEquals(0, subList2.size());
+    }
+
+    @Test
+    public void testRemove() {
+        LinkedList<Integer> list = Lists.newLinkedList();
+        for(int i = 0; i < 5; i++) {
+            list.add(i);
+        }
+        list.size();
+        list.removeFirst();
+        list.addLast(5);
+        list.stream().forEach(System.out::println);
     }
 }

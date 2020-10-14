@@ -3,6 +3,7 @@ package javabase.set;
 import com.google.common.collect.Sets;
 import org.junit.Test;
 
+import java.util.Random;
 import java.util.Set;
 
 /**
@@ -12,10 +13,11 @@ public class setTest {
     @Test
     public void testSet() {
         Set<Integer> set = Sets.newHashSet();
-        set.add(1);
-        set.add(2);
-        set.add(2);
-        set.forEach(o -> System.out.println(o));
+        Random random = new Random();
+        for(int i = 0; i < 100; i ++) {
+            set.add(random.nextInt(100));
+        }
+        set.forEach(System.out::println);
         System.out.println("size: "+ set.size());
     }
 }

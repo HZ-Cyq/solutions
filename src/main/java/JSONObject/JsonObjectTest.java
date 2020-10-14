@@ -133,6 +133,21 @@ public class JsonObjectTest {
     }
 
     @Test
+    public void testsParseArray() {
+        String jsonStr = "{\"RGift_Cust202011_1\":[[\"AC_16340_1_1\",\"AC_16340_1_2\",\"AC_16340_1_3\"],[\"AC_16340_1_4\",\"AC_16340_1_5\",\"AC_16340_1_6\"],[\"AC_16340_1_7\"]],\n" +
+                "\"RGift_Cust202011_2\":[[\"AC_16340_1_1\",\"AC_16340_1_2\",\"AC_16340_1_3\"],[\"AC_16340_1_4\",\"AC_16340_1_5\",\"AC_16340_1_6\"],[\"AC_16340_1_7\"]],\n" +
+                "\"RGift_Cust202011_3\":[[\"AC_16340_1_1\",\"AC_16340_1_2\",\"AC_16340_1_3\"],[\"AC_16340_1_4\",\"AC_16340_1_5\",\"AC_16340_1_6\"],[\"AC_16340_1_7\"]]}";
+        JSONObject json = JSON.parseObject(jsonStr);
+        JSONArray goods = json.getJSONArray("RGift_Cust202011_1");
+        for (Object good : goods) {
+            JSONArray aRowGoods = (JSONArray) good;
+            System.out.println(aRowGoods);
+        }
+        System.out.println(goods);
+    }
+
+
+    @Test
     public void testGetObject() {
         JSONObject json = new JSONObject();
         List<Staff> list = Lists.newLinkedList();

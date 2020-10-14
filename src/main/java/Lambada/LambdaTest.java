@@ -1,8 +1,12 @@
 package Lambada;
 
+import com.google.common.collect.Lists;
+import com.google.common.collect.Maps;
 import org.junit.Test;
 
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.IntSummaryStatistics;
 import java.util.List;
 import java.util.Map;
@@ -98,4 +102,57 @@ public class LambdaTest {
         Optional result = Stream.of("f", "ba", "hello").map(s -> s.length()).filter(l -> l <= 3).max((o1, o2) -> o1 - o2);
         System.out.println(result.get()); // 输出2
     }
+
+    @Test
+    public void test1() {
+        // 在map1中找最大value对应的key,如果有多个key,再去map2中找最大value对应的key.
+        Map<String, Long> map1 = Maps.newHashMap();
+        map1.put("1", 1L);
+        map1.put("2", 2L);
+        map1.put("3", 3L);
+        map1.put("4", 3L);
+
+        Map<String, Long> map2 = Maps.newHashMap();
+        map2.put("1", 1L);
+        map2.put("2", 2L);
+        map2.put("3", 3L);
+        map2.put("4", 4L);
+
+        List<Map.Entry<String, Long>> list = Lists.newArrayList(map1.entrySet());
+
+        Collections.sort(list, (o1, o2) -> {
+            // 返回值小于0，不交换顺序，是正常的.意思是说我希望o1的值小于o2
+            if (o1.getValue() < o2.getValue()) {
+                return -1;
+            }
+            return 1;
+        });
+        System.out.println(list);
+    }
+
+    @Test
+    public void test2() {
+        List<Integer> list = Lists.newArrayList();
+        /*list.add(1);
+        list.add(2);
+        list.add(3);
+        list.add(4);*/
+        /*int max = list.stream().max((o1, o2) -> {
+            if (o1 < o2) {
+                return -1;
+            }
+            return 1;
+        }).get();
+        System.out.println(max);*/
+
+        System.out.println(list.stream().reduce(Integer::sum).orElse(0));
+    }
+
+//    @Test
+
+    public void change(Integer i, Integer j) {
+        i = 1;
+        j = 2;
+    }
+
 }
