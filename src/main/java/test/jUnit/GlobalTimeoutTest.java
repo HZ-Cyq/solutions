@@ -1,8 +1,7 @@
-package jUnit;
+package test.jUnit;
 
 import org.junit.Rule;
 import org.junit.Test;
-import org.junit.rules.MethodRule;
 import org.junit.rules.TestRule;
 import org.junit.rules.Timeout;
 
