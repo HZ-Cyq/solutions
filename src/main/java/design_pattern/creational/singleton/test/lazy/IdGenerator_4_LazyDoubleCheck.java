@@ -15,6 +15,7 @@ public class IdGenerator_4_LazyDoubleCheck {
         if (instance == null) {
             // 类级别的锁，什么是类级别的锁？是不是当有一个用到IdGenerator_4_LazyDoubleCheck进程进入的时候，另一个进程就进不去了？
             synchronized (IdGenerator_4_LazyDoubleCheck.class) {
+                // 这里为什么要判一次空？什么是类级别的锁？
                 if (instance == null) {
                     instance = new IdGenerator_4_LazyDoubleCheck();
                 }
