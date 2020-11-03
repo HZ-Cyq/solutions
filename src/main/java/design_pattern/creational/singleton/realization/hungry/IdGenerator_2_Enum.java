@@ -1,4 +1,4 @@
-package design_pattern.creational.singleton.test.hungry;
+package design_pattern.creational.singleton.realization.hungry;
 
 import java.util.concurrent.atomic.AtomicLong;
 

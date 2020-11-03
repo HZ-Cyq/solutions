@@ -1,13 +1,9 @@
-package design_pattern.creational.singleton.test;
+package design_pattern.creational.singleton.realization;
 
-import design_pattern.creational.singleton.test.hungry.IdGenerator_1_Basic;
-import design_pattern.creational.singleton.test.lazy.IdGenerator_3_LazyBasic;
+import design_pattern.creational.singleton.realization.hungry.IdGenerator_1_Basic;
+import design_pattern.creational.singleton.realization.lazy.IdGenerator_3_LazyBasic;
 import org.junit.Assert;
 import org.junit.Test;
-
-import javax.management.relation.RoleUnresolved;
-
-import static design_pattern.creational.singleton.test.lazy.IdGenerator_3_LazyBasic.getInstance;
 
 /**
  * @author chenyuqun

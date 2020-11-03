@@ -1,21 +1,26 @@
-package design_pattern.creational.singleton.test2.hungry;
+package design_pattern.creational.singleton.realization.hungry;
 
+import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicLong;
 
 /**
  * @author chenyuqun
  */
 public class IdGenerator_1_Basic {
-
-    private static IdGenerator_1_Basic instance = new IdGenerator_1_Basic();
-
     private AtomicLong id = new AtomicLong(0);
+
+    private static final IdGenerator_1_Basic instance = new IdGenerator_1_Basic();
 
     private IdGenerator_1_Basic() {
 
     }
 
     public static IdGenerator_1_Basic getInstance() {
+        try {
+            TimeUnit.SECONDS.sleep(1);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         return instance;
     }
 

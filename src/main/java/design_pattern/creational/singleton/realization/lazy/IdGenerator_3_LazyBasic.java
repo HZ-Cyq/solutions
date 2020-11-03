@@ -1,4 +1,4 @@
-package design_pattern.creational.singleton.test.lazy;
+package design_pattern.creational.singleton.realization.lazy;
 
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicLong;
