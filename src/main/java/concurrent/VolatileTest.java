@@ -6,11 +6,11 @@ import java.util.concurrent.TimeUnit;
  * @author chenyuqun
  */
 public class VolatileTest {
-    // 如果没有加volatile, 主线程不知道
+    // 如果没有加volatile, 主线程不知道，会在while循环里卡死。
     static volatile boolean loop = true;
 
     public static void main(String[] args) {
-        Thread tHread = new Thread(() -> {
+        Thread thread = new Thread(() -> {
             try {
                 TimeUnit.SECONDS.sleep(2);
             } catch (InterruptedException e) {
@@ -19,13 +19,12 @@ public class VolatileTest {
             loop = false;
             System.out.println("thread change loop value");
         });
-        tHread.start();
+        thread.start();
 
         while (loop) {
-            if(!loop) {
-                System.out.println("main thread know the change:" + loop);
-                System.out.flush();
-            }
+
         }
+
+        System.out.println("main thread know loop change: " + loop);
     }
 }
