@@ -6,7 +6,7 @@ import java.util.concurrent.TimeUnit;
  * @author chenyuqun
  */
 public class VolatileTest {
-    // 如果没有加volatile, 主线程不知道，会在while循环里卡死。
+    // 如果没有加volatile, 主线程不知道该值的变化，会在while循环里卡死。
     static volatile boolean loop = true;
 
     public static void main(String[] args) {
