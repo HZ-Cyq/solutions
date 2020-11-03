@@ -7,7 +7,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  * @author chenyuqun
  */
 
-public class Test {
+public class AtomicAndSynTest {
 
     private static AtomicInteger count = new AtomicInteger(0);
 
@@ -20,8 +20,8 @@ public class Test {
     }
 
     public static void testAdd() {
-        Thread th1 = new Thread(Test::add100K);
-        Thread th2 = new Thread(Test::add100K);
+        Thread th1 = new Thread(AtomicAndSynTest::add100K);
+        Thread th2 = new Thread(AtomicAndSynTest::add100K);
         th1.start();
         th2.start();
         try {
@@ -29,12 +29,12 @@ public class Test {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        System.out.println(countL);
+        System.out.println(count);
     }
 
     public static void testAddL() {
-        Thread th1 = new Thread(Test::add100KL);
-        Thread th2 = new Thread(Test::add100KL);
+        Thread th1 = new Thread(AtomicAndSynTest::add100KL);
+        Thread th2 = new Thread(AtomicAndSynTest::add100KL);
         th1.start();
         th2.start();
         try {
