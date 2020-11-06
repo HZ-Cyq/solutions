@@ -1,12 +1,20 @@
 package design_pattern.creational.prototype;
 
+import java.io.Serializable;
+
 /**
  * @author chenyuqun
  */
-public class SearchWord {
+public class SearchWord implements Serializable {
     private String keyWord;
     private long count;
     private long lastUpdateTime;
+
+    public SearchWord(String keyWord, long count, long lastUpdateTime) {
+        this.keyWord = keyWord;
+        this.count = count;
+        this.lastUpdateTime = lastUpdateTime;
+    }
 
     public String getKeyWord() {
         return keyWord;
@@ -30,5 +38,14 @@ public class SearchWord {
 
     public void setLastUpdateTime(long lastUpdateTime) {
         this.lastUpdateTime = lastUpdateTime;
+    }
+
+    @Override
+    public String toString() {
+        return "SearchWord{" +
+                "keyWord='" + keyWord + '\'' +
+                ", count=" + count +
+                ", lastUpdateTime=" + lastUpdateTime +
+                '}';
     }
 }
