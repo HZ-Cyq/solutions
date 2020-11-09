@@ -6,7 +6,6 @@ import org.junit.Test;
 
 import java.util.Arrays;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.IntSummaryStatistics;
 import java.util.List;
 import java.util.Map;
@@ -26,6 +25,7 @@ public class LambdaTest {
     Integer[] array = new Integer[]{7, 7, 1, 2, 3, 4, 5, 6};
 
     // 如果再次对steam操作，会报错
+    // 会报 stream has already been operated upon or closed 这个异常
     Supplier<Stream<Integer>> streamSupplier = () -> (Stream<Integer>) Arrays.stream(array);
 
     @Test
@@ -130,29 +130,54 @@ public class LambdaTest {
         System.out.println(list);
     }
 
-    @Test
-    public void test2() {
-        List<Integer> list = Lists.newArrayList();
-        /*list.add(1);
-        list.add(2);
-        list.add(3);
-        list.add(4);*/
-        /*int max = list.stream().max((o1, o2) -> {
-            if (o1 < o2) {
-                return -1;
-            }
-            return 1;
-        }).get();
-        System.out.println(max);*/
+    Integer[] array1 = new Integer[]{1, 2, 3, 4, 5, 6, 7, 8, 9};
+    Supplier<Stream<Integer>> streamSupplier1 = () -> Stream.of(array1);
 
-        System.out.println(list.stream().reduce(Integer::sum).orElse(0));
+    /**
+     * reduce方法比较常见，又添加了一些测试用例。
+     * 参考：https://www.liaoxuefeng.com/wiki/1252599548343744/1322402971648033#0
+     */
+    @Test
+    public void testReduceAdd() {
+        int sum = streamSupplier1.get().reduce(0, (acc, n) -> acc + n);
+        // 计算过程
+        // acc = 0;
+        // acc = 0 + 1 = 1;
+        // acc = 1 + 2 = 3;
+        // acc = 3 + 3 = 6;
+        // acc = 6 + 4 = 10;
+        // acc = 10 + 5 = 15;
+        // acc = 15 + 6 = 21;
+        // acc = 21 + 7 = 28;
+        // acc = 28 + 8 = 36;
+        // acc = 36 + 9 = 45;
+        System.out.println("sum: " + sum);
     }
 
-//    @Test
+    @Test
+    public void testReduceMulti() {
+        int s = streamSupplier1.get().reduce(1, (acc, n) -> acc * n);
+        // 计算过程
+        // acc = 1;
+        // acc = 1 * 1 = 1;
+        // acc = 1 * 2 = 2;
+        // acc = 2 * 3 = 6;
+        // acc = 6 * 4 = 24;
+        // acc = 24 * 5 = 120;
+        // acc = 120 * 6 = 720;
+        // acc = 720 * 7 = 5040;
+        // acc = 4200 * 8 = 40320;
+        // acc = 33600 * 9 = 362880;
+        System.out.println("s: " + s);
+    }
 
-    public void change(Integer i, Integer j) {
-        i = 1;
-        j = 2;
+    @Test
+    public void testReduce() {
+        // 下面的这行无法编译，因为java9才提供List.of方法
+        //List<String> props = List.of("profile=native", "debug=true", "logging=warn", "interval=500");
+        List<String> props = Stream.of("profile=native", "debug=true", "logging=warn", "interval=500").collect(Collectors.toList());
+        Map<String, String> map = props.stream().collect(Collectors.toMap((kv) -> kv.split("=")[0], (kv) -> kv.split("=")[1]));
+        map.forEach((k, v) -> System.out.println("key: " + k + "value: " + v));
     }
 
 }

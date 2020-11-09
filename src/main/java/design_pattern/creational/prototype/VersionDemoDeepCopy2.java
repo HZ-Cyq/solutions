@@ -11,6 +11,7 @@ import java.io.ObjectOutputStream;
  */
 public class VersionDemoDeepCopy2 {
 
+    // Deep copy 序列化之后再反序列化。
     public static Object deepCopy(Object object) throws IOException, ClassNotFoundException {
         ByteArrayOutputStream bo = new ByteArrayOutputStream();
         ObjectOutputStream oo = new ObjectOutputStream(bo);
@@ -23,7 +24,7 @@ public class VersionDemoDeepCopy2 {
     }
 
     public static void main(String[] args) {
-        SearchWord searchWord = new SearchWord("a",1,1);
+        SearchWord searchWord = new SearchWord("a", 1, 1);
         SearchWord copyWord = null;
         try {
             copyWord = (SearchWord) deepCopy(searchWord);
