@@ -12,8 +12,8 @@ import java.util.Arrays;
 public class reflectTest {
 
     /**
-     * 1、获得class对象
-     * 2、通过class对象获得类名
+     * 1、获得class对
+    * 2、通过class对象获得类名
      * 3、通过class对象获得类的修饰符：诸与public、private、static等
      * 4、通过class对象获得类所实现的接口类
      * 5、通过class对象获得类的方法
