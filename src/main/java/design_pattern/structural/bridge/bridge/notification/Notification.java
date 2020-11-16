@@ -3,6 +3,7 @@ package design_pattern.structural.bridge.bridge.notification;
 import design_pattern.structural.bridge.bridge.sender.MsgSender;
 
 /**
+ * 这个类主要用来发送不同紧急程度的消息
  * @author chenyuqun
  */
 public abstract class Notification {

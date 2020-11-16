@@ -5,6 +5,7 @@ import design_pattern.structural.bridge.NotificationEmergencyLevel;
 import java.util.List;
 
 /**
+ * 这个类主要用来通知不同紧急类型的信息
  * @author chenyuqun
  */
 public class Notification {

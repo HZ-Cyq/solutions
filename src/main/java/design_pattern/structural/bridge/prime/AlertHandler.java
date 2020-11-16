@@ -3,6 +3,7 @@ package design_pattern.structural.bridge.prime;
 import design_pattern.structural.bridge.AlertRule;
 
 /**
+ *
  * @author chenyuqun
  */
 public abstract class AlertHandler {

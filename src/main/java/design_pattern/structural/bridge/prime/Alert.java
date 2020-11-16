@@ -7,6 +7,7 @@ import design_pattern.structural.bridge.bridge.notification.Notification;
 import java.util.ArrayList;
 
 /**
+ * 这个类里存着handlers，用来检查ApiStatInfo
  * @author chenyuqun
  */
 public class Alert {
