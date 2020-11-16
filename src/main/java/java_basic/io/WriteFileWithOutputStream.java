@@ -17,7 +17,7 @@ import java.io.PrintStream;
  * @author chenyuqun
  * 参考：http://tutorials.jenkov.com/java-io/index.html
  */
-public class IOTest {
+public class WriteFileWithOutputStream {
 
     String pathForRead = "src/main/java/java_basic/io/text_for_read";
 
