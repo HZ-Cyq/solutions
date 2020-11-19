@@ -15,5 +15,4 @@ public class Demo {
         // 文件中的数据先经过base64解码，再解密，读出来。
         System.out.println(new String(dataSource.readData()));
     }
-
 }
