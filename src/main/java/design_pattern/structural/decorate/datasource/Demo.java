@@ -1,6 +1,7 @@
 package design_pattern.structural.decorate.datasource;
 
 /**
+ * 增强功能，写入经过编码和加密的数据, 读取经过解密和解码的数据
  * @author chenyuqun
  * @date 2020/11/18 11:07 上午
  */
