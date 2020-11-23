@@ -12,19 +12,14 @@
 
 ## 具体项目中的类图
 
-![代理模式]()
-
 ![桥接模式](bridge/devices/picture/bridgeUML.png)
 
 ![装饰器模式](decorate/datasource/picture/DecoratorUML.png)
 
 ![适配器模式](adapter/round_and_square/picture/AdapterUML.png)
 
-![门面模式]()
-
 ![组合模式](composite/shapes/picture/CompositeUML.png)
 
-![享元模式]()
 
 ## 抽象类图
 摘录自：（https://refactoringguru.cn)
