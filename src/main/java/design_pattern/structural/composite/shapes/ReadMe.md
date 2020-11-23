@@ -1,1 +1,1 @@
-![UML图](picture/Composite.png)
+![UML图](picture/CompositeUML.png)
