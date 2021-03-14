@@ -1,4 +1,7 @@
-package multiThreading.MrLiao.wait_and_notify;
+package multiThreading.MrLiao.threadlocal.mine;
+
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 /**
  * 上下文实现AutoCloseable接口，利用try(resource){...}结构,在调用完之后会自动的删掉。
@@ -8,11 +11,31 @@ package multiThreading.MrLiao.wait_and_notify;
  */
 public class Test2 {
     public static void main(String[] args) {
-        try(UserContext userContext = new UserContext("hello")) {
+        ExecutorService executorService = Executors.newFixedThreadPool(4);
+        for (int i = 0; i < 10; i++) {
+            Task task = new Task(String.valueOf(i));
+            executorService.submit(task);
+        }
+        executorService.shutdown();
+    }
+}
 
+class Task implements Runnable {
+    String userName;
+
+    public Task(String userName) {
+        this.userName = userName;
+    }
+
+    @Override
+    public void run() {
+        // UserContext要在run方法里实现，根据这个任务的userName创建UserContext.
+        try (UserContext userContext = new UserContext(userName)) {
+            System.out.println(Thread.currentThread().getName() + ": " + UserContext.currentUser());
         } catch (Exception e) {
             e.printStackTrace();
         }
+        System.out.println(Thread.currentThread().getName() + " clean userContext " + ": " + UserContext.currentUser());
     }
 }
 

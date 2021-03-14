@@ -1,4 +1,4 @@
-package multithreading.volatiletest;
+package multiThreading.volatiletest;
 
 /**
  * @author playcrab_chenyuqun

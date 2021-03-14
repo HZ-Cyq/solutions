@@ -1,0 +1,13 @@
+Benchmark                                                                       (n)  Mode  Cnt       Score      Error  Units
+multiThreading.master.ch02.matrix.MatrixTest.testParallelGroupMultiplier        500  avgt   25     348.895 ±   57.451  ms/op
+multiThreading.master.ch02.matrix.MatrixTest.testParallelGroupMultiplier       1000  avgt   25   11436.971 ±  298.400  ms/op
+multiThreading.master.ch02.matrix.MatrixTest.testParallelGroupMultiplier       2000  avgt   25  146940.199 ± 3356.329  ms/op
+multiThreading.master.ch02.matrix.MatrixTest.testParallelIndividualMultiplier   500  avgt   25   23598.913 ±  422.263  ms/op
+multiThreading.master.ch02.matrix.MatrixTest.testParallelIndividualMultiplier  1000  avgt   25   93752.138 ±  505.780  ms/op
+multiThreading.master.ch02.matrix.MatrixTest.testParallelIndividualMultiplier  2000  avgt   25  406508.722 ± 1111.486  ms/op
+multiThreading.master.ch02.matrix.MatrixTest.testParallelRowMultiplier          500  avgt   25     563.299 ±   33.183  ms/op
+multiThreading.master.ch02.matrix.MatrixTest.testParallelRowMultiplier         1000  avgt   25    9431.149 ±  549.115  ms/op
+multiThreading.master.ch02.matrix.MatrixTest.testParallelRowMultiplier         2000  avgt   25  109520.332 ± 1000.443  ms/op
+multiThreading.master.ch02.matrix.MatrixTest.testSerial                         500  avgt   25     363.291 ±   26.897  ms/op
+multiThreading.master.ch02.matrix.MatrixTest.testSerial                        1000  avgt   25   19129.105 ± 1150.661  ms/op
+multiThreading.master.ch02.matrix.MatrixTest.testSerial                        2000  avgt   25  237518.069 ± 4753.684  ms/op

@@ -1,4 +1,4 @@
-package MrMa.multiThread.reentrant_lock;
+package MrMa.multiThread.count_down_latch;
 
 /**
  * @author chenyuqun

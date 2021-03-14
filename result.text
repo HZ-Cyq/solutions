@@ -1,0 +1,2 @@
+Benchmark              (n)  Mode  Cnt  Score    Error  Units
+MatrixTest.testSerial    5  avgt   25  0.001 ±  0.001  ms/op

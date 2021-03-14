@@ -1,4 +1,4 @@
-package multithreading.someTest;
+package multiThreading.someTest;
 
 /**
  * @author chenyuqun

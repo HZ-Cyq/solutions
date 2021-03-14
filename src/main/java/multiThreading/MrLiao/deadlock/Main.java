@@ -1,4 +1,4 @@
-package multiThreading.MrLiao;
+package multiThreading.MrLiao.deadlock;
 
 /**
  * Learn Java from https://www.liaoxuefeng.com/

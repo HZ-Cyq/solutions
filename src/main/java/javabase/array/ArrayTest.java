@@ -1,16 +1,16 @@
 package javabase.array;
 
 import com.alibaba.fastjson.JSONObject;
-import com.dingtalk.api.response.OapiReportListResponse;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.Lists;
-import com.sun.deploy.util.ArrayUtil;
 import org.junit.Assert;
 import org.junit.Test;
-import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 /**
  * @author playcrab_chenyuqun
@@ -191,5 +191,109 @@ public class ArrayTest {
     public void test4() {
         List<String> list = Lists.newArrayList();
         System.out.println(list.get(0));
+    }
+
+    @Test
+    public void test5() {
+        int[] nums = new int[]{1, 2, 3, 1};
+        int peakIndex = findPeakElement(nums);
+        System.out.println(peakIndex);
+    }
+
+    public int findPeakElement(int[] nums) {
+        // 不用模板了，换一种别的思路试·试
+        if (nums == null || nums.length == 0) {
+            return -1;
+        }
+        int l = 0, r = nums.length - 1;
+        // 循环保持的条件是，峰值"*y在[left, right]区间
+        // 经历一次循环，要么是left往右缩，要么是right往左缩
+        int midIndex = 0;
+        while (l < r) {
+            midIndex = (l + r) / 2;
+            // midIndex不可能为nums.length - 1;
+            if (nums[midIndex] < nums[midIndex + 1]) {
+                // nums在[midIndex, midIndex + 1] 递增：mid的右边必有峰值 => left要向右缩
+                l = midIndex + 1;
+            } else {
+                // nums在[midIndex, midIndex + 1] 递减：mid的左侧必有峰值 => right要向左缩
+                r = midIndex;
+            }
+            if (l == r) {
+                break;
+            }
+        }
+
+        if (l == r) {
+            return l;
+        }
+        List<Integer> re = new ArrayList();
+        return -1;
+    }
+
+    /**
+     * 测试打印全排列
+     */
+    @Test
+    public void testPrintPermutation() {
+        List<List<Integer>> lists = Lists.newArrayList();
+        List<Integer> list1 = IntStream.range(0, 5).boxed().collect(Collectors.toList());
+        List<Integer> list2 = IntStream.range(0, 6).boxed().collect(Collectors.toList());
+        List<Integer> list3 = IntStream.range(0, 7).boxed().collect(Collectors.toList());
+        lists.add(list1);
+        lists.add(list2);
+        lists.add(list3);
+        List<List<Integer>> fullPermutation = Lists.newArrayList();
+        fullPermutation = getFull(lists,2);
+        /*int j = 0;
+        for (int i = 0; i < list1.size(); i++) {
+            for (int i1 = 0; i1 < list2.size(); i1++) {
+                for (int i2 = 0; i2 < list3.size(); i2++) {
+                    List<Integer> list = Lists.newArrayList();
+                    list.add(lists.get(j).get(i));
+                    list.add(lists.get(j + 1).get(i1));
+                    list.add(lists.get(j + 2).get(i2));
+                    fullPermutation.add(list);
+                }
+            }
+        }*/
+
+        fullPermutation.forEach(list -> {
+            for (int i = 0; i < list.size() - 1; i++) {
+                System.out.print(list.get(i));
+            }
+            System.out.println(list.get(list.size() - 1));
+        });
+    }
+
+    public List<List<Integer>> getFull(List<List<Integer>> lists, int m) {
+        if (m == 0) {
+            List<List<Integer>> full = Lists.newArrayList();
+            for (int i = 0; i < lists.get(m).size(); i++) {
+                List<Integer> list = Lists.newArrayList();
+                list.add(lists.get(m).get(i));
+                full.add(list);
+            }
+            return full;
+        }
+        List<List<Integer>> list = getFull(lists, m - 1);
+        List<List<Integer>> re = Lists.newArrayList();
+        for (List<Integer> integers : list) {
+            List<List<Integer>> re1 = Lists.newArrayList();
+            for (int i = 0; i < lists.get(m).size(); i++) {
+                List<Integer> l = new ArrayList<>(integers);
+                l.add(lists.get(m).get(i));
+                re1.add(l);
+            }
+            re.addAll(re1);
+        }
+        return re;
+    }
+
+    @Test
+    public void testTwoDimension() {
+        int[][] intArray = new int[10][20];
+        System.out.println(intArray.length);
+        System.out.println(intArray[0].length);
     }
 }

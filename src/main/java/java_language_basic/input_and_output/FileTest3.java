@@ -3,7 +3,6 @@ package java_language_basic.input_and_output;
 import org.junit.Test;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.RandomAccessFile;
 
@@ -23,7 +22,8 @@ public class FileTest3 {
         String args = "src/main/java/java_language_basic/input_and_output/test";
         String javaPath = System.getProperty("user.dir");
         // 拼接上就可以得到文件的全路径
-        String filePath = javaPath + "/" + args;
+        // String filePath = javaPath + "/" + args;
+        String filePath = this.getClass().getResource("").getPath();
         File myFile = new File(filePath);
 
         /**

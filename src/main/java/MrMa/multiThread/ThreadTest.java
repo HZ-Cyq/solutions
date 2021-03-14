@@ -1,24 +1,23 @@
 package MrMa.multiThread;
 
-import org.junit.Test;
+import java.util.concurrent.TimeUnit;
 
 /**
  * @author chenyuqun
  */
 public class ThreadTest {
-    @Test
-    public void testStart(){
-//        Thread thread =
-    }
-
-    public class thread1 extends Thread {
-
-    }
-
-    public class thread2 implements Runnable {
-        @Override
-        public void run() {
-            System.out.println("hello");
-        }
+    public static void main(String[] args) {
+        Thread thread = new Thread(() -> {
+            System.out.println("thread start");
+            try {
+                TimeUnit.SECONDS.sleep(1);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            System.out.println("thread end");
+        });
+        thread.start();
+        // 虽然主线程结束了，子线程仍可以继续执行。
+        System.out.println("main end");
     }
 }

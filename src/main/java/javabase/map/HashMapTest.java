@@ -77,6 +77,15 @@ public class HashMapTest {
         System.out.println(iterator.next().getKey());
         System.out.println(iterator.next().getKey());
     }
+
+    @Test
+    public void testNullValue() {
+        Map<String, String> map = Maps.newHashMap();
+        System.out.println(map.get(null));
+
+        String str = "";
+        System.out.println(str.equals(null));
+    }
 }
 
 

@@ -1,4 +1,4 @@
-package multiThreading.MrLiao.wait_and_notify;
+package multiThreading.MrLiao.threadlocal.mine;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;

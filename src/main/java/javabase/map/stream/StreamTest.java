@@ -3,7 +3,6 @@ package javabase.map.stream;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
-import com.taobao.api.internal.toplink.embedded.websocket.util.StringUtil;
 import com.taobao.api.internal.util.StringUtils;
 import org.junit.Test;
 
@@ -12,7 +11,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
+import java.util.stream.IntStream;
 
 import static java.util.Comparator.comparing;
 
@@ -23,6 +22,10 @@ public class StreamTest {
 
     private static Map<String, Employee> map1 = new HashMap<>();
     private static Map<String, Employee> map2 = new HashMap<>();
+
+    private static String apply(Integer ele) {
+        return String.valueOf(ele);
+    }
 
     @Test
     public void testAllMatch() {
@@ -198,5 +201,13 @@ public class StreamTest {
         list.add("2");
         System.out.println("get List");
         return list;
+    }
+
+    @Test
+    public void testStreamRange() {
+        List<String> ret = IntStream.range(0,10).boxed().map(String::valueOf).collect(Collectors.toList());
+        for (int i = 0; i < ret.size(); i++) {
+            System.out.println(ret.get(i));
+        }
     }
 }

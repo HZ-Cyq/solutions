@@ -1,5 +1,7 @@
 package Lambada;
 
+import org.junit.Test;
+
 import java.util.function.BiFunction;
 import java.util.function.Function;
 
@@ -26,5 +28,27 @@ public class BiFunctionTest {
     public int calculate(int num1, int num2, BiFunction<Integer, Integer, Integer> biFunction, Function<Integer, Integer> function) {
         //调用addThen首先对接收的两个参数进行biFunction的apply，然后在进行function的apply
         return biFunction.andThen(function).apply(num1, num2);
+    }
+
+    @Test
+    public void test1() {
+        BiFunction<Integer, Integer, Integer> biFunction = (integer, integer2) -> addTwoSum(integer, integer2);
+        System.out.println(biFunction.apply(4,5));
+    }
+
+    @Test
+    public void test2() {
+        long a = (long) ((150 / 100D) * 100L);
+        System.out.println(a);
+    }
+
+    public int addTwoSum(int a, int b) {
+        return a + b;
+    }
+
+    @Test
+    public void test3() {
+        Integer a = 534;
+        System.out.println(534 == a);
     }
 }

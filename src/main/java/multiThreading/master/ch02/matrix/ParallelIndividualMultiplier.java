@@ -1,22 +1,26 @@
-package multithreading.master.ch02.matrix;
+package multiThreading.master.ch02.matrix;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author chenyuqun
  * @date 2021/1/12 11:46 上午
  */
-public class ParallelRowMultiplier {
+public class ParallelIndividualMultiplier {
     public static void multiply(double[][] matrix1, double[][] matrix2, double[][] result) {
         int totalRows = matrix1.length;
         int totalColumns = matrix2[0].length;
-        Thread[] threads = new Thread[10];
+        List<Thread> threads = new ArrayList<>();
         for (int row = 0; row < totalRows; row++) {
             for (int column = 0; column < totalColumns; column++) {
-                for (int i = 0; i < 10; i++) {
-                    IndividualMultiplierTask task = new IndividualMultiplierTask(result, matrix1, matrix2, row, column);
-                    threads[i] = new Thread(task);
-                    threads[i].start();
+                IndividualMultiplierTask task = new IndividualMultiplierTask(result, matrix1, matrix2, row, column);
+                Thread thread = new Thread(task);
+                thread.start();
+                threads.add(thread);
+                if (threads.size() % 10 == 0) {
+                    waitForThreads(threads);
                 }
-                join(threads);
             }
         }
     }
@@ -26,7 +30,7 @@ public class ParallelRowMultiplier {
      *
      * @param threads
      */
-    public static void join(Thread[] threads) {
+    public static void waitForThreads(List<Thread> threads) {
         for (Thread thread : threads) {
             try {
                 thread.join();
@@ -34,5 +38,6 @@ public class ParallelRowMultiplier {
                 e.printStackTrace();
             }
         }
+        threads.clear();
     }
 }

@@ -1,4 +1,4 @@
-package multithreading;
+package multiThreading;
 
 import org.junit.Test;
 

@@ -1,4 +1,4 @@
-package multithreading;
+package multiThreading;
 
 import com.google.common.collect.Maps;
 import org.junit.Test;
@@ -99,36 +99,36 @@ public class ConcurrentMapTest {
 
     @Test
     public void testMap() {
-        Map<String , Integer> map = Maps.newHashMap();
-        map.put("1",1);
-        map.put("2",2);
-        map.put("3",3);
-        for(String key: map.keySet()) {
+        Map<String, Integer> map = Maps.newHashMap();
+        map.put("1", 1);
+        map.put("2", 2);
+        map.put("3", 3);
+        for (String key : map.keySet()) {
             System.out.println("key: " + key + ", value: " + map.get(key));
         }
     }
 
     /**
-     *  测试putIfAbsent和put的返回值：返回旧值【没有就是null】
+     * 测试putIfAbsent和put的返回值：返回旧值【没有就是null】
      */
     @Test
     public void testPutIfAbsent() {
         Map<String, String> map = Maps.newHashMap();
-        String re1 = map.putIfAbsent("1","1");
-        String re2 = map.putIfAbsent("1","2");
-        System.out.println(re1 + "," +re2);
+        String re1 = map.putIfAbsent("1", "1");
+        String re2 = map.putIfAbsent("1", "2");
+        System.out.println(re1 + "," + re2);
 
-        String re3 = map.put("2","3");
-        String re4 = map.put("1","3");
-        System.out.println(re3 + "," +re4);
+        String re3 = map.put("2", "3");
+        String re4 = map.put("1", "3");
+        System.out.println(re3 + "," + re4);
     }
 
     @Test
     public void testIterator() {
         Map<String, String> map = Maps.newHashMap();
-        map.put("1","1");
-        map.put("2","2");
-        map.put("3","3");
+        map.put("1", "1");
+        map.put("2", "2");
+        map.put("3", "3");
         System.out.println(map.values().stream().iterator().next());
     }
 
@@ -145,20 +145,23 @@ public class ConcurrentMapTest {
     @Test
     public void testTreeMap() {
         TreeMap<Integer, String> treeMap = Maps.newTreeMap();
-        treeMap.put(1,"1");
-        treeMap.put(3,"3");
-        treeMap.put(2,"2");
-        treeMap.put(4,"2");
-        treeMap.put(8,"2");
-        treeMap.put(9,"2");
-        treeMap.put(10,"2");
-        treeMap.put(11,"2");
-        treeMap.put(5,"2");
-        treeMap.put(6,"2");
-        treeMap.put(7,"2");
+        treeMap.put(1, "1");
+        treeMap.put(2, "2");
+        treeMap.put(3, "3");
+        treeMap.put(4, "4");
+        treeMap.put(5, "5");
+        treeMap.put(6, "6");
+        treeMap.put(7, "7");
+        treeMap.put(8, "8");
+        treeMap.put(9, "9");
+        treeMap.put(10, "10");
 
-        for(Map.Entry<Integer, String> entry : treeMap.entrySet()) {
-            System.out.println(entry.getKey());
-        }
+        System.out.println(treeMap.ceilingKey(7));
+        System.out.println(treeMap.ceilingKey(-1));
+        System.out.println(treeMap.higherKey(9));
+
+
+
     }
+
 }

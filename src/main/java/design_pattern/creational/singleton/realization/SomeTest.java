@@ -44,4 +44,24 @@ public class SomeTest {
             System.out.println(IdGenerator_3_LazyBasic.getInstance().hashCode());
         }
     }
+
+    @Test
+    public void test3() {
+        long a = 10L;
+        long b = 3L;
+        System.out.println(a / (double)b * b);
+    }
+
+    @Test
+    public void teRst4() {
+        int n = 10;
+        System.out.println(acc(n, 0));
+    }
+
+    public int acc(int n, int sum) {
+        if(n == 1) {
+            return n + sum;
+        }
+        return acc(n - 1, sum + n);
+    }
 }

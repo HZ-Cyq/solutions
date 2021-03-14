@@ -180,4 +180,8 @@ public class LambdaTest {
         map.forEach((k, v) -> System.out.println("key: " + k + "value: " + v));
     }
 
+    @Test
+    public void testFunction() {
+
+    }
 }

@@ -1,4 +1,4 @@
-package multithreading;
+package multiThreading;
 
 /**
  * @author playcrab_chenyuqun
