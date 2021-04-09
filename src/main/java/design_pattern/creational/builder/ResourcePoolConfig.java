@@ -1,6 +1,6 @@
 package design_pattern.creational.builder;
 
-import com.taobao.api.internal.util.StringUtils;
+import Utils.StringUtils;
 
 /**
  * @author chenyuqun

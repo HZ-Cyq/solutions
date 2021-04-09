@@ -1,7 +1,6 @@
 package javabase.stringTest;
 
 import com.google.common.base.Strings;
-import com.sun.deploy.util.StringUtils;
 import org.junit.Test;
 
 import java.time.Instant;
