@@ -1,6 +1,4 @@
 package design_pattern.structural.composite;
-
-import com.dingtalk.api.request.OapiChatSendRequest;
 import com.google.common.collect.Lists;
 
 import java.io.File;
