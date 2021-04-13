@@ -1,7 +1,7 @@
 package javabase.stringTest;
 
 import com.google.common.base.Strings;
-import com.sun.deploy.util.StringUtils;
+import com.sun.javafx.binding.StringFormatter;
 import org.junit.Test;
 
 import java.time.Instant;
@@ -63,5 +63,11 @@ public class StringTest {
             int i = Integer.parseInt(s);
             System.out.println(i);
         }
+    }
+
+    @Test
+    public void testFormat() {
+        String desc = "hello, {}";
+        StringFormatter.format(desc, "world");
     }
 }
