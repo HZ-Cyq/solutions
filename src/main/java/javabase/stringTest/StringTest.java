@@ -68,6 +68,7 @@ public class StringTest {
     @Test
     public void testFormat() {
         String desc = "hello, {}";
-        StringFormatter.format(desc, "world");
+        String str = StringFormatter.format(desc, "world").get();
+        System.out.println(str);
     }
 }

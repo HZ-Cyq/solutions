@@ -7,8 +7,6 @@ import io.vavr.Function4;
 import io.vavr.Lazy;
 import io.vavr.Tuple;
 import io.vavr.Tuple2;
-import io.vavr.Value;
-import io.vavr.collection.Stream;
 import io.vavr.control.Either;
 import io.vavr.control.Option;
 import io.vavr.control.Try;
@@ -17,10 +15,11 @@ import org.junit.Test;
 
 import java.math.BigInteger;
 import java.util.List;
-import java.util.Map;
 import java.util.Random;
 import java.util.function.Function;
 import java.util.function.Supplier;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
@@ -157,6 +156,17 @@ public class VavrTest {
         assertFalse(lazy.isEvaluated());
         lazy.get();
         assertTrue(lazy.isEvaluated());
+    }
+
+    @Test
+    public void testPeek() {
+        List<String> collect = Stream.of("one", "two", "three", "four")
+                .filter(e -> e.length() > 3)
+                .peek(e -> System.out.println("Filtered value: " + e))
+                .map(String::toUpperCase)
+                .peek(e -> System.out.println("Mapped value: " + e))
+                .collect(Collectors.toList());
+        collect.forEach(System.out::print);
     }
 
     /**************数据结构****************/

@@ -5,7 +5,6 @@ import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.google.common.collect.Lists;
 import org.junit.Test;
-import reflect.MyObject;
 
 import java.util.List;
 
@@ -163,5 +162,30 @@ public class JsonObjectTest {
         jList.add(staff1);
 
         System.out.println(JSON.toJSONString(json));
+    }
+
+    @Test
+    public void testContainsAll() {
+        List<String> list = Lists.newArrayList();
+        list.add("1");
+        list.add("2");
+        list.add("3");
+
+        JSONArray jsonArray = new JSONArray();
+        jsonArray.add("1");
+        jsonArray.add("2");
+
+        System.out.println(list.containsAll(jsonArray.toJavaList(String.class)));
+    }
+
+    @Test
+    public void testGetObjectNull() {
+        JSONObject jsonObject = new JSONObject();
+        List<String> list1 = Lists.newArrayList();
+        jsonObject.put("list1", list1);
+        List<String> list = jsonObject.getObject("list", List.class);
+        JSONArray jsonArray = new JSONArray();
+        jsonArray.add(list);
+        System.out.println(jsonArray.size());
     }
 }
