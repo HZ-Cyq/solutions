@@ -12,6 +12,7 @@ public class enumTest {
         for(SeasonEnum seasonEnum : SeasonEnum.values()) {
             Season season = new Season(seasonEnum);
             season.print();
+            System.out.println(seasonEnum.name());
         }
     }
 

@@ -9,7 +9,7 @@ import java.util.Set;
 /**
  * @author playcrab_chenyuqun
  */
-public class setTest {
+public class SetTest {
     @Test
     public void testSet() {
         Set<Integer> set = Sets.newHashSet();

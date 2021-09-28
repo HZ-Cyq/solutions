@@ -237,4 +237,19 @@ public class FunctionTest {
         return re;
     }
 
+    @Test
+    public void test2() {
+        int a = 1;
+        int b = 1;
+        end:
+        if (a == 1) {
+            if (b == 1) {
+                System.out.println("b is 1");
+                break end;
+            }
+            System.out.println("b is not 1");
+        }
+        System.out.println("hello, a if is end");
+    }
+
 }

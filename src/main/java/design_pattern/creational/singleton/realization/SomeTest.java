@@ -64,4 +64,10 @@ public class SomeTest {
         }
         return acc(n - 1, sum + n);
     }
+
+    @Test
+    public void test4() {
+        long a = 123214L;
+        System.out.println((int)(a * 1.0));
+    }
 }

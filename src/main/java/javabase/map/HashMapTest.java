@@ -86,6 +86,19 @@ public class HashMapTest {
         String str = "";
         System.out.println(str.equals(null));
     }
+    @Test
+    public void testFor() {
+        Map<String, String> map = Maps.newHashMap();
+        map.put("1","1");
+        map.put("2","2");
+        map.put("3","3");
+        for (Map.Entry<String, String> entry : map.entrySet()) {
+            entry.setValue("4");
+        }
+        for (Map.Entry<String, String> entry : map.entrySet()) {
+            System.out.println(entry.getKey()+","+ entry.getValue());
+        }
+    }
 }
 
 

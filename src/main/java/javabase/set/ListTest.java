@@ -81,7 +81,36 @@ public class ListTest {
         }
     }
 
+    @Test
+    public void testSort() {
+        List<Integer> list = Lists.newArrayList();
+        list.add(1);
+        list.add(2);
+        list.add(5);
+        list.add(4);
+        list.add(3);
+        list.add(3);
+        list.add(3);
+        List<Integer> collect = list.stream().sorted().collect(Collectors.toList());
+        collect.forEach(System.out::println);
+    }
+
     public Set<String> getSet(Map<String, String> map) {
         return Collections.unmodifiableSet(map.keySet());
+    }
+
+    @Test
+    public void testInsert() {
+        List<Integer> list = Lists.newArrayList();
+        list.add(1);
+        list.add(2);
+        list.add(3);
+        System.out.println("size: " + list.size());
+        list.add(3, 5);
+        list.forEach(System.out::println);
+    }
+
+    @Test
+    public void addAll() {
     }
 }

@@ -20,4 +20,5 @@ public class InputStreamTest {
             System.out.print((char) byteCode);
         }
     }
+
 }
