@@ -11,6 +11,8 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentLinkedDeque;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
@@ -112,5 +114,34 @@ public class ListTest {
 
     @Test
     public void addAll() {
+        ConcurrentLinkedDeque<String> queue = new ConcurrentLinkedDeque<>();
+        queue.add("1");
+        queue.add("2");
+        queue.add("3");
+
+    }
+
+    @Test
+    public void test1() {
+        List<String> list = Lists.newArrayList();
+        boolean add = list.add(null);
+        System.out.println(add);
+        list.add("1");
+        list.add("2");
+        System.out.println(list);
+    }
+
+    @Test
+    public void test2() {
+        List<String> list = Lists.newArrayList();
+        String s = list.get(0);
+        System.out.println(s);
+    }
+
+    @Test
+    public void test3() {
+        ConcurrentHashMap<String, Integer> concurrentHashMap = new ConcurrentHashMap<>();
+        concurrentHashMap.put("1", 1);
+        concurrentHashMap.remove("2");
     }
 }

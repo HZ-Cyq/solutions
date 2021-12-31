@@ -1,15 +1,21 @@
 package JSONObject;
 
-import java.util.Date;
+import com.alibaba.fastjson.annotation.JSONField;
 
 /**
  * @author playcrab_chenyuqun
  */
 public class Staff {
+    @JSONField(name = "n")
     private String name;
+    @JSONField(name = "a")
     private int age;
+    @JSONField(name = "s")
     private String sex;
+    @JSONField(name = "t")
     private String telephone;
+
+    private static int a = 10;
 
     public Staff(String name, int age, String sex, String telephone) {
         this.name = name;
@@ -48,5 +54,13 @@ public class Staff {
 
     public void setTelephone(String telephone) {
         this.telephone = telephone;
+    }
+
+    public static int getA() {
+        return a;
+    }
+
+    public static void setA(int a) {
+        Staff.a = a;
     }
 }

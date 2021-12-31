@@ -70,4 +70,5 @@ public class SomeTest {
         long a = 123214L;
         System.out.println((int)(a * 1.0));
     }
+    
 }

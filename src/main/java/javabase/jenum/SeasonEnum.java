@@ -17,4 +17,8 @@ public enum SeasonEnum {
     public int getSeq() {
         return seq;
     }
+
+    public static void main(String[] args) {
+        System.out.println(AUTUMN.name());
+    }
 }
