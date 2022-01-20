@@ -260,4 +260,15 @@ public class JsonObjectTest {
 
         System.out.println(set);
     }
+
+    @Test
+    public void testCreate() {
+        Staff staff = new Staff("11",12,"man", "1232");
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.put("v", staff);
+        Staff v = jsonObject.getObject("v", Staff.class);
+        v.setName("feeewa");
+        System.out.println(staff);
+    }
+
 }
