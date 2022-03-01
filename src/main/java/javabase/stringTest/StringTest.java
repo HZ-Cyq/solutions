@@ -2,7 +2,6 @@ package javabase.stringTest;
 
 import com.google.common.base.Strings;
 import com.google.common.collect.Lists;
-import com.sun.javafx.binding.StringFormatter;
 import org.junit.Test;
 
 import java.time.Instant;
@@ -70,7 +69,7 @@ public class StringTest {
     @Test
     public void testFormat() {
         String desc = "hello, {}";
-        String str = StringFormatter.format(desc, "world").get();
+        String str = String.format(desc, "world");
         System.out.println(str);
     }
 

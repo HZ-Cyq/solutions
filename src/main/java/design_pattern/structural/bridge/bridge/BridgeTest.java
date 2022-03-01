@@ -1,6 +1,5 @@
 package design_pattern.structural.bridge.bridge;
 
-import com.sun.xml.internal.ws.model.AbstractWrapperBeanGenerator;
 import design_pattern.structural.bridge.prime.ApiStatInfo;
 import org.junit.Test;
 

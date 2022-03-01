@@ -7,6 +7,10 @@ import java.util.concurrent.TimeUnit;
  * @date 2021/1/12 3:50 下午
  */
 public class SomeTest {
+    public SomeTest(Integer a) {
+        System.out.println("hello world: " + a);
+    }
+
     public static void main(String[] args) {
         Thread thread = new Thread(() -> {
             try {

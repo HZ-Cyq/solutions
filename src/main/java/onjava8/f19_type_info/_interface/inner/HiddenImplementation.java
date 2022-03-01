@@ -2,6 +2,7 @@ package onjava8.f19_type_info._interface.inner;
 
 import onjava8.f19_type_info._interface.A;
 import onjava8.f19_type_info._interface.HiddenC;
+import org.junit.Test;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -31,5 +32,9 @@ public class HiddenImplementation {
         Method method = o.getClass().getDeclaredMethod(methodName);
         method.setAccessible(true);
         method.invoke(o);
+    }
+
+    @Test
+    public void test() {
     }
 }
