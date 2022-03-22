@@ -5,4 +5,9 @@ package books.code_out_efficiency.B06_collection_test.animal_cat_carfield;
  * @date 2022/3/1 6:25 下午
  */
 public class Animal {
+    @Override
+    public boolean equals(Object obj) {
+        return obj.hashCode() == hashCode();
+    }
+
 }

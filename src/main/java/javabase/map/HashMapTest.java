@@ -19,6 +19,7 @@ public class HashMapTest {
     @Before
     public void initTreeMap() {
         treeMap.put(0, "0");
+
         treeMap.put(1, "1");
         treeMap.put(2, "2");
         treeMap.put(3, "3");

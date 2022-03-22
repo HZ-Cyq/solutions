@@ -263,12 +263,28 @@ public class JsonObjectTest {
 
     @Test
     public void testCreate() {
-        Staff staff = new Staff("11",12,"man", "1232");
-        JSONObject jsonObject = new JSONObject();
-        jsonObject.put("v", staff);
-        Staff v = jsonObject.getObject("v", Staff.class);
-        v.setName("feeewa");
-        System.out.println(staff);
+//        Staff staff = new Staff("11",12,"man", "1232");
+//        JSONObject jsonObject = new JSONObject();
+//        jsonObject.put("v", staff);
+//        Staff v = jsonObject.getObject("v", Staff.class);
+//        v.setName("feeewa");
+//        System.out.println(staff);
+        List<String> list = Lists.newArrayList();
+        list.add("1");
+        list.add("2");
+        list.add("3");
+        List<String> collect = list.stream().filter(ele -> "1".equals(ele)).collect(Collectors.toList());
+        System.out.println(collect);
+    }
+
+    @Test
+    public void testJson1() {
+        Staff1 staff = new Staff1("11",12,"man");
+        staff.setTelephone("123321");
+        String s = JSONObject.toJSONString(staff);
+        System.out.println(s);
+        Staff1 staff1 = JSONObject.parseObject(s, Staff1.class);
+        System.out.println(staff1);
     }
 
 }

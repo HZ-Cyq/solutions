@@ -144,4 +144,24 @@ public class ListTest {
         concurrentHashMap.put("1", 1);
         concurrentHashMap.remove("2");
     }
+
+    @Test
+    public void test4() {
+        List<String> list = Lists.newArrayList();
+        for (int i = 0; i < 10; i++) {
+            list.add(String.valueOf(i));
+        }
+        for (int i = 0; i < list.size(); i++) {
+            if(i == 4) {
+                list.set(i, "aaa");
+            }
+        }
+        System.out.println(list);
+    }
+
+    @Test
+    public void test5() {
+
+    }
 }
+

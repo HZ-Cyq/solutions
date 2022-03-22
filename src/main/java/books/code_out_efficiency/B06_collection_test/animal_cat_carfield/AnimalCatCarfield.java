@@ -1,5 +1,7 @@
 package books.code_out_efficiency.B06_collection_test.animal_cat_carfield;
 
+import org.junit.Test;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -27,7 +29,7 @@ public class AnimalCatCarfield {
         // 下面两行编译不过去
         // List<? extends Cat> list3 = animalList;
         // List<? super Cat> list4 = carfieldList;
-
+        
         // get操作
         Cat cat = list1.get(0);
         Object object = list2.get(0);
@@ -41,6 +43,13 @@ public class AnimalCatCarfield {
         // 下面这行会报错
         // list2.add(new Animal());
 
+    }
+
+    @Test
+    public void test2() {
+        Animal animal1 = new Animal();
+        Animal animal2 = new Animal();
+        System.out.println(animal1.equals(animal2));
     }
 
 }

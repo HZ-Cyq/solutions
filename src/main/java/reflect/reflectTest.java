@@ -161,4 +161,17 @@ public class reflectTest {
         Class myObjectCla = Class.forName("reflect.MyObject");
         System.out.println(myObjectCla.toString());
     }
+
+    /**
+     * 根据属性名获得属性值
+     */
+    @Test
+    public void testAttribute() throws NoSuchFieldException, IllegalAccessException {
+        Class cla = MyObject.class;
+        Field attribute1Field = cla.getDeclaredField("attribute1");
+        MyObject myObject = new MyObject();
+        myObject.attribute1 = "hello, world";
+        Object o = attribute1Field.get(myObject);
+        Assert.assertEquals(myObject.attribute1, o.toString());
+    }
 }
