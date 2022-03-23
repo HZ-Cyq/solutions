@@ -42,8 +42,6 @@ public class RedBlackTree {
             return;
         }
         Node p = root;
-        // 插入的是新值，才需要调整
-        boolean needFix = true;
         // 新节点是父节点的哪个子节点？0代表父节点，1代表左节点，2代表右节点
         // 先插入进去，再平衡
         while (true) {
@@ -66,12 +64,9 @@ public class RedBlackTree {
                 break;
             }
             p.val = val;
-            needFix = false;
             break;
         }
-        if (needFix) {
             fixAfterInsertion(node);
-        }
     }
 
     public void clear() {
@@ -85,7 +80,7 @@ public class RedBlackTree {
             return;
         }
         Node parent = node.parent;
-        // 父亲是红色，不用继续调整
+        // 父亲是黑色，不用继续调整
         if (parent.color == BLACK) {
             return;
         }
