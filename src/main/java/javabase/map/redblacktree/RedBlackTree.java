@@ -2,6 +2,7 @@ package javabase.map.redblacktree;
 
 import java.lang.reflect.Field;
 import java.util.Map;
+import java.util.Objects;
 import java.util.TreeMap;
 
 /**
@@ -71,6 +72,10 @@ public class RedBlackTree {
         if (needFix) {
             fixAfterInsertion(node);
         }
+    }
+
+    public void clear() {
+        this.root = null;
     }
 
     public void fixAfterInsertion(Node node) {
@@ -275,14 +280,14 @@ public class RedBlackTree {
     }
 
     public boolean isEqual(Node node, Map.Entry<Integer, Integer> entry) throws NoSuchFieldException, IllegalAccessException {
-        if (!checkValEqual(node, entry)) {
+        if (checkValEqual(node, entry)) {
             return false;
         }
         if (node == null && entry == null) {
             return true;
         }
         Map.Entry<Integer, Integer> parent = (Map.Entry<Integer, Integer>) getDeclaredFieldVal(entry, "parent");
-        if (!checkValEqual(node.parent, parent)) {
+        if (checkValEqual(Objects.requireNonNull(node).parent, parent)) {
             return false;
         }
         Map.Entry<Integer, Integer> left = (Map.Entry<Integer, Integer>) getDeclaredFieldVal(entry, "left");
@@ -292,22 +297,19 @@ public class RedBlackTree {
 
     public boolean checkValEqual(Node node, Map.Entry<Integer, Integer> entry) throws NoSuchFieldException, IllegalAccessException {
         if (node == null && entry == null) {
-            return true;
+            return false;
         }
         if (node == null || entry == null) {
-            return false;
+            return true;
         }
         if (node.key != entry.getKey()) {
-            return false;
+            return true;
         }
         if (node.val != entry.getValue()) {
-            return false;
+            return true;
         }
         boolean color = (boolean) getDeclaredFieldVal(entry, "color");
-        if (node.color != color) {
-            return false;
-        }
-        return true;
+        return node.color != color;
     }
 
     public static Object getDeclaredFieldVal(Map.Entry entry, String fieldName) throws NoSuchFieldException, IllegalAccessException {
