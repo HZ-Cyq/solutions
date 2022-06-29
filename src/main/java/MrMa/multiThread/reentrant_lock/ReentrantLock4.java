@@ -13,7 +13,7 @@ import java.util.concurrent.locks.ReentrantLock;
  */
 public class ReentrantLock4 {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         Lock lock = new ReentrantLock();
 
         Thread t1 = new Thread(() -> {
@@ -35,12 +35,15 @@ public class ReentrantLock4 {
                 System.out.println("t2 start");
                 System.out.println("t2 end");
             } catch (Exception e) {
-
+                System.out.println("t2 interrupt");
             } finally {
                 lock.unlock();
             }
         });
-
+        t1.start();
+        t2.start();
+        TimeUnit.SECONDS.sleep(2L);
+        t2.interrupt();
 
     }
 }

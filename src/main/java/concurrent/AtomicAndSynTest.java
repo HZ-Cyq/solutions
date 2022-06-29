@@ -1,7 +1,11 @@
 package concurrent;
 
+import sun.misc.Unsafe;
+import test.A;
+
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.AtomicStampedReference;
 
 /**
  * @author chenyuqun
@@ -17,6 +21,8 @@ public class AtomicAndSynTest {
     public static void main(String[] args) {
         testAdd();
         testAddL();
+        AtomicStampedReference<Integer> atomicStampedReference = new AtomicStampedReference<>(1, 1);
+//        atomicStampedReference.compareAndSet()
     }
 
     public static void testAdd() {

@@ -4,9 +4,7 @@ import com.google.common.collect.Maps;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.util.Iterator;
-import java.util.Map;
-import java.util.TreeMap;
+import java.util.*;
 
 /**
  * @author chenyuqun
@@ -85,6 +83,25 @@ public class HashMapTest {
 
         String str = "";
         System.out.println(str.equals(null));
+    }
+
+    @Test
+    public void testHashTable() {
+        Hashtable<String, String> hashtable = new Hashtable<>();
+        hashtable.put("a", "a");
+        hashtable.get("a");
+    }
+
+    @Test
+    public void test21() {
+        HashMap<String, String> hashMap = new HashMap<>();
+        hashMap.put("a", "a");
+        hashMap.put("b", "b");
+        System.out.println(hashMap);
+    }
+
+    @Test
+    public void test22() {
     }
 }
 
