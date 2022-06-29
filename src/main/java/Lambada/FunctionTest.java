@@ -1,10 +1,13 @@
 package Lambada;
 
+import com.alibaba.fastjson.JSONArray;
 import org.junit.Assert;
 import org.junit.Test;
 
 import java.math.BigDecimal;
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 import java.util.function.BiFunction;
 import java.util.function.Consumer;
@@ -12,6 +15,7 @@ import java.util.function.Function;
 import java.util.function.IntPredicate;
 import java.util.function.Predicate;
 import java.util.function.Supplier;
+import java.util.stream.Collectors;
 
 /**
  * @author chenyuqun
@@ -235,6 +239,31 @@ public class FunctionTest {
             re *= i;
         }
         return re;
+    }
+
+    @Test
+    public void test2() {
+        int a = 1;
+        int b = 1;
+        end:
+        if (a == 1) {
+            if (b == 1) {
+                System.out.println("b is 1");
+                break end;
+            }
+            System.out.println("b is not 1");
+        }
+        System.out.println("hello, a if is end");
+    }
+
+    @Test
+    public void testCollection() {
+        Map<String, String> map = new HashMap<>();
+        for (int i = 0; i < 10; i++) {
+            map.put(String.valueOf(i), String.valueOf(i));
+        }
+        JSONArray jsonArray = map.keySet().stream().collect(Collectors.toCollection(JSONArray::new));
+        System.out.println(jsonArray);
     }
 
 }

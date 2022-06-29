@@ -1,12 +1,14 @@
 package javabase.stringTest;
 
 import com.google.common.base.Strings;
+import com.google.common.collect.Lists;
 import org.junit.Test;
 
 import java.time.Instant;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.ZoneId;
+import java.util.ArrayList;
 
 /**
  * @author playcrab_chenyuqun
@@ -62,5 +64,34 @@ public class StringTest {
             int i = Integer.parseInt(s);
             System.out.println(i);
         }
+    }
+
+    @Test
+    public void testFormat() {
+        String desc = "hello, {}";
+        String str = String.format(desc, "world");
+        System.out.println(str);
+    }
+
+    @Test
+    public void testSum() {
+        ArrayList<Integer> list = Lists.newArrayList();
+        list.add(1);
+        list.add(2);
+        list.add(3);
+        Integer reduce = list.stream().reduce(0, Integer::sum);
+        System.out.println(reduce);
+    }
+
+    @Test
+    public void testCatch() {
+        int a = 0;
+        int b = 10;
+        try {
+            b = 10 / a;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        System.out.println(b);
     }
 }

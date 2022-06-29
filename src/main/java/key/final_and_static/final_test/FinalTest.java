@@ -13,4 +13,5 @@ public class FinalTest {
         // 下面这句话会报错
         //b = new int[]{3,4};
     }
+
 }

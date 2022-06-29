@@ -296,4 +296,12 @@ public class ArrayTest {
         System.out.println(intArray.length);
         System.out.println(intArray[0].length);
     }
+
+    @Test
+    public void testList() {
+        List<String> list = new ArrayList<>();
+        list.add("1");
+        list.add("2");
+        System.out.println(list);
+    }
 }

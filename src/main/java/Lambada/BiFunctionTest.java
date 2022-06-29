@@ -33,7 +33,7 @@ public class BiFunctionTest {
     @Test
     public void test1() {
         BiFunction<Integer, Integer, Integer> biFunction = (integer, integer2) -> addTwoSum(integer, integer2);
-        System.out.println(biFunction.apply(4,5));
+        System.out.println(biFunction.apply(4, 5));
     }
 
     @Test
@@ -50,5 +50,14 @@ public class BiFunctionTest {
     public void test3() {
         Integer a = 534;
         System.out.println(534 == a);
+    }
+
+    @Test
+
+    public void test4() {
+        int a = 10;
+        int b = 10;
+        System.out.println(++a + ", " + a);
+        System.out.println(b++ + ", " + b);
     }
 }

@@ -17,6 +17,7 @@ public class HashMapTest {
     @Before
     public void initTreeMap() {
         treeMap.put(0, "0");
+
         treeMap.put(1, "1");
         treeMap.put(2, "2");
         treeMap.put(3, "3");
@@ -100,8 +101,17 @@ public class HashMapTest {
         System.out.println(hashMap);
     }
 
-    @Test
-    public void test22() {
+    public void testFor() {
+        Map<String, String> map = Maps.newHashMap();
+        map.put("1","1");
+        map.put("2","2");
+        map.put("3","3");
+        for (Map.Entry<String, String> entry : map.entrySet()) {
+            entry.setValue("4");
+        }
+        for (Map.Entry<String, String> entry : map.entrySet()) {
+            System.out.println(entry.getKey()+","+ entry.getValue());
+        }
     }
 }
 

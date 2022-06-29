@@ -11,7 +11,7 @@ public class DynamicTest {
         MetricsCollectorProxy proxy = new MetricsCollectorProxy();
         IUserController userController = (IUserController) proxy.createProxy(new UserController());
         System.out.println("hello");
-        userController.login("hello","world");
-        userController.register("hello","world");
+        userController.login("hello", "world");
+        userController.register("hello", "world");
     }
 }
