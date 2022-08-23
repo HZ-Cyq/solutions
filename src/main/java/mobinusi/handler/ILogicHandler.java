@@ -1,5 +1,5 @@
 package mobinusi.handler;
 
-@LogicHandlerAnnotation(modelCode = 0)
+@LogicHandlerAnnotation(handlerCode = 0)
 public interface ILogicHandler {
 }

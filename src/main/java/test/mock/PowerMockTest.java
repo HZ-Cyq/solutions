@@ -5,7 +5,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.powermock.api.mockito.PowerMockito;
-import org.powermock.core.classloader.annotations.PrepareForTest;
+//import org.powermock.core.classloader.annotations.PrepareForTest;
 import org.powermock.modules.junit4.PowerMockRunner;
 
 import java.util.Map;
@@ -14,12 +14,12 @@ import java.util.Map;
  * @author chenyuqun
  * @date 2021/1/8 4:50 下午
  */
-@PrepareForTest({ClassA.class})
+//@PrepareForTest({ClassA.class})
 @RunWith(PowerMockRunner.class)
 public class PowerMockTest {
     @BeforeClass
     public static void beforeClass() {
-        PowerMockito.mockStatic(ClassA.class);
+//        PowerMockito.mockStatic(ClassA.class);
         //when(ClassA.getOne()).thenReturn(2);
     }
 

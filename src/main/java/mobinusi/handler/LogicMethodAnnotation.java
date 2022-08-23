@@ -8,6 +8,6 @@ import java.lang.annotation.Target;
 @Target(ElementType.METHOD)
 @Retention(RetentionPolicy.RUNTIME)
 public @interface LogicMethodAnnotation {
-    String desc();
-    int opCode();
+    String desc() default "";
+    int methodCode();
 }

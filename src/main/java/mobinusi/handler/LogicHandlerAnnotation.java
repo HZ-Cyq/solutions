@@ -11,6 +11,6 @@ public @interface LogicHandlerAnnotation {
 
     String desc() default "";
 
-    int modelCode();
+    int handlerCode();
 
 }
