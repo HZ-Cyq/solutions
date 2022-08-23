@@ -7,7 +7,6 @@ public class AA {
     /**
      * https://leetcode-cn.com/problems/merge-sorted-array/
      */
-    @Test
     public void testMergeSortedArrays() {
         int[] nums1 = new int[]{1,2,3,0,0,0};
         int[] nums2 = new int[]{2,5,6};
@@ -42,7 +41,6 @@ public class AA {
         }
     }
 
-    @Test
     public void testMergeTowSortedLists(){
         ListNode n1 = new ListNode(1);
         ListNode n2 = new ListNode(2);
@@ -89,7 +87,6 @@ public class AA {
         ListNode next;
         ListNode(int x) {val = x;}
     }
-    @Test
     public void testBase() {
         int[] array = new int[10];
         System.out.printf("%d\n",array.length);

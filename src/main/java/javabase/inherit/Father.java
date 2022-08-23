@@ -4,15 +4,16 @@ package javabase.inherit;
  * @author playcrab_chenyuqun
  */
 public class Father {
-    int a;
-    public Father(int a) {
-        this.a = a;
-    }
-    public int getA() {
-        return a;
+
+    static {
+        System.out.println("static method in father");
     }
 
-    public void setA(int a) {
-        this.a = a;
+    {
+        System.out.println("object method in father");
+    }
+
+    public Father() {
+        System.out.println("father constructor");
     }
 }

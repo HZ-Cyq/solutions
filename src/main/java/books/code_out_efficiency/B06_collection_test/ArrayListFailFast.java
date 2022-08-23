@@ -2,10 +2,7 @@ package books.code_out_efficiency.B06_collection_test;
 
 import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.BitSet;
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
 
 /**
  * @author chenyuqun
@@ -22,19 +19,30 @@ public class ArrayListFailFast {
         Iterator<String> iterator = list.iterator();
         while (iterator.hasNext()) {
             String next = iterator.next();
-            if(next.equals("two")) {
-                iterator.remove();
-            }
+            System.out.println(next);
+            list.add("six");
         }
     }
 
     @Test
     public void test() {
-        BitSet bitSet = new BitSet(5);
-        bitSet.set(1);
-        bitSet.set(3);
-        for (int i = 0; i < 5; i++) {
-            System.out.println(bitSet.nextSetBit(i));
-        }
+        ArrayList<String> list = new ArrayList<>();
+        list.add("1");
+        list.add("2");
+        list.add("3");
+        list.add("4");
+        Thread thread1 = new Thread(() -> {
+            Iterator<String> iterator = list.iterator();
+            while (iterator.hasNext()) {
+                System.out.println(iterator.next());
+            }
+        });
+        Thread thread2 = new Thread(() -> {
+            Iterator<String> iterator = list.iterator();
+            while (iterator.hasNext()) {
+                System.out.println(iterator.next());
+            }
+        });
     }
+
 }

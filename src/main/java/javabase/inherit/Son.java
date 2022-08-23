@@ -4,10 +4,16 @@ package javabase.inherit;
  * @author playcrab_chenyuqun
  */
 public class Son extends Father {
+
     public Son(int a) {
-        super(a);
+        System.out.println(a);
     }
-    public void printA() {
-        System.out.println(this.getA());
+
+    static {
+        System.out.println("static method in son");
+    }
+
+    {
+        System.out.println("object method in son");
     }
 }

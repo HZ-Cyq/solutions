@@ -9,6 +9,6 @@ public class JunitTest {
     public void test1() {
         int a = 2;
         int b = 3;
-        Assert.assertEquals(a, b);
+        Assert.assertNotEquals(a, b);
     }
 }

@@ -101,16 +101,30 @@ public class HashMapTest {
         System.out.println(hashMap);
     }
 
+    @Test
     public void testFor() {
         Map<String, String> map = Maps.newHashMap();
-        map.put("1","1");
-        map.put("2","2");
-        map.put("3","3");
+        map.put("1", "1");
+        map.put("2", "2");
+        map.put("3", "3");
+        map.get("2");
         for (Map.Entry<String, String> entry : map.entrySet()) {
             entry.setValue("4");
         }
         for (Map.Entry<String, String> entry : map.entrySet()) {
-            System.out.println(entry.getKey()+","+ entry.getValue());
+            System.out.println(entry.getKey() + "," + entry.getValue());
+        }
+    }
+
+    @Test
+    public void test3() {
+        LinkedHashMap<Integer, String> linkedHashMap = new LinkedHashMap<>(16, 0.75F, true);
+        linkedHashMap.put(1, "张三");
+        linkedHashMap.put(2, "李四");
+        linkedHashMap.put(1, "张三02");
+        System.out.println(linkedHashMap.get(2));
+        for (Map.Entry<Integer, String> entry : linkedHashMap.entrySet()) {
+            System.out.println(entry);
         }
     }
 }

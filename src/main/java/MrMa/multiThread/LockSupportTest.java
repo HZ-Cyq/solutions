@@ -1,7 +1,5 @@
 package MrMa.multiThread;
 
-import java.util.concurrent.locks.LockSupport;
-
 /**
  * 在线程执行的时候阻塞
  */
