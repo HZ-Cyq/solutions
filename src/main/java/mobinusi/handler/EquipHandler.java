@@ -19,8 +19,8 @@ public class EquipHandler implements ConsumeMsgHandler {
     }
 
     @HandlerMethodAnnotation(methodCode = HandlerMethodCode.EQUIP_CARD_TAKE_OFF_1000_02, desc = "脱下装备")
-    public JSONObject takeOff(Player player, JSONObject json) {
-        ///
+    public JSONObject takeOff(Player player, JSONObject json){
+        EquipService.takeOff();
         return null;
     }
 }

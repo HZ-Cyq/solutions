@@ -1,0 +1,50 @@
+syntax = "proto3";
+
+// 为生成的Cmd.java文件设置包名，会在命令执行的路径下创建一个serialize.protoBuf包，并且将生成的java类放到该包下（如果没有的话）
+
+//package serialize.protoBuf;
+import "Msg.proto";
+message Cmd_Act_Get {
+  // 在build的时候可以不设置字段，不设置的话，对应的值就是默认值。
+  string rid = 1;
+  int32 actId = 2;
+}
+
+/**
+ *[1,15]标识号占用1个字节，[16,2047]之间的标识号占2个字节。
+ *可以为未来可能添加，频繁出现的字段预留一些标识号。
+ */
+message Cmd_1 {
+  // 用reserved字段，表示预留1,2,9到20之间的标记号
+  reserved 1, 2, 9 to 20;
+  // 下面这段会报错
+  // int32 a = 1;
+}
+
+// 消息嵌套
+message Cmd_2 {
+  int32 a = 1;
+  int32 b = 2;
+  Cmd_3 c = 3;
+}
+
+
+// 嵌套其他proto文件
+message Cmd_otherProto {
+  Msg1 msg1 = 1;
+}
+
+message Cmd_3 {
+  int32 a = 1;
+  int32 b = 2;
+}
+
+// 数组类型
+message Cmd_4 {
+  // 大于等于0个
+  repeated int32 a = 1;
+}
+
+message Cmd_5 {
+  map<int32, string> map = 1;
+}

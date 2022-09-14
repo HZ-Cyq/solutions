@@ -1,8 +1,6 @@
 package mobinusi;
 
 import com.alibaba.fastjson.JSONObject;
-import mobinusi.handler.EquipHandler;
-import mobinusi.handler.ConsumeMsgHandler;
 import mobinusi.handler.ILogicManager;
 import mobinusi.service.EquipService;
 import org.junit.Test;
@@ -36,9 +34,11 @@ public class DemoTest {
         System.out.println(EquipService.integer);
     }
 
+    /**
+     * 测试抛异常
+     */
     @Test
     public void test1() {
-        System.out.println(ConsumeMsgHandler.class.isAssignableFrom(EquipHandler.class));
-        System.out.println(EquipHandler.class.isAssignableFrom(ConsumeMsgHandler.class));
+
     }
 }

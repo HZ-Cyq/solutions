@@ -3,6 +3,7 @@ package javabase.set;
 import com.google.common.collect.Sets;
 import org.junit.Test;
 
+import java.util.Iterator;
 import java.util.Random;
 import java.util.Set;
 
@@ -19,5 +20,19 @@ public class SetTest {
         }
         set.forEach(System.out::println);
         System.out.println("size: "+ set.size());
+    }
+
+    @Test
+    public void testRemove() {
+        Set<Integer> set = Sets.newHashSet();
+        set.add(1);
+        set.add(2);
+        set.add(3);
+        Iterator<Integer> iterator = set.iterator();
+        while (iterator.hasNext()) {
+            Integer next = iterator.next();
+            set.remove(2);
+            System.out.println(next);
+        }
     }
 }

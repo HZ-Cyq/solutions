@@ -2,7 +2,10 @@ package mobinusi.handler;
 
 import cn.hutool.core.util.ClassUtil;
 import com.alibaba.fastjson.JSONObject;
+import exception.MyException;
 import mobinusi.Player;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -11,6 +14,7 @@ import java.util.concurrent.ConcurrentHashMap;
 
 public class ILogicManager {
 
+    private static Logger logger = LoggerFactory.getLogger(ILogicManager.class);
     private static ILogicManager instance = new ILogicManager();
 
     /**
@@ -84,17 +88,27 @@ public class ILogicManager {
         return instance;
     }
 
-    public Object invoke(int methodCode, Player player, JSONObject jsonObject) {
+    public Object invoke(int methodCode, Player player, JSONObject json) {
+        Object re = null;
+        try {
+            re = invoke0(methodCode, player, json);
+        } catch (MyException myException) {
+            // 打印描述信息
+            logger.error(myException.getDesc(), myException.getErrorCode(), myException.getObjects());
+            // 打印堆栈信息
+            logger.error(myException.getMessage(), myException);
+        } catch (Throwable throwable) {
+            logger.error(throwable.getMessage(), throwable);
+        }
+        return re;
+    }
+
+    private Object invoke0(int methodCode, Player player, JSONObject jsonObject) throws MyException, InvocationTargetException, IllegalAccessException {
         int handlerCode = methodCode / 100 * 100;
         ConsumeMsgHandler handler = logicHandlersMap.get(handlerCode);
         Method method = logicMethodsMap.get(methodCode);
         Object re = null;
-        try {
-            re = method.invoke(handler, player, jsonObject);
-        } catch (IllegalAccessException | InvocationTargetException e) {
-            e.printStackTrace();
-            System.err.println("无法消耗：" + method + ", " + JSONObject.toJSONString(jsonObject));
-        }
+        re = method.invoke(handler, player, jsonObject);
         return re;
     }
 }
