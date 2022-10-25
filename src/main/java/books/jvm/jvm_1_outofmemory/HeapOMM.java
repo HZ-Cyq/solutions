@@ -1,9 +1,5 @@
 package books.jvm.jvm_1_outofmemory;
 
-import com.google.common.collect.Lists;
-
-import java.util.List;
-
 /**
  * VM Args: -Xms20m Xmx20m -XX:+HeapDumpOnOutOfMemoryError
  * @author chenyuqun
@@ -19,10 +15,14 @@ public class HeapOMM {
     }
 
     public static void main(String[] args) {
-        List<OMMObject> lists = Lists.newArrayList();
-        while (true) {
-            lists.add(new OMMObject());
+        for (String arg : args) {
+            System.out.println(arg);
         }
+        System.out.println("hello world");
+//        List<OMMObject> lists = Lists.newArrayList();
+//        while (true) {
+//            lists.add(new OMMObject());
+//        }
     }
 
 }

@@ -30,6 +30,9 @@ public class MyTest {
             throwException();
         } catch (MyException e) {
             e.printStackTrace();
+        } catch (Exception exception) {
+            System.out.println("exception");
+            exception.printStackTrace();
         }
     }
 

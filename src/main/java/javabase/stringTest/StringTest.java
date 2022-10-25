@@ -4,19 +4,31 @@ import com.google.common.base.Strings;
 import com.google.common.collect.Lists;
 import org.junit.Test;
 
+import java.io.File;
 import java.time.Instant;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.ZoneId;
 import java.util.ArrayList;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * @author playcrab_chenyuqun
  */
 public class StringTest {
     @Test
-    public void test1() {
+    public void testSplit1() {
         String str = "1_2_3";
+        String[] strs = str.split("_");
+        for (int i = 0; i < strs.length; i++) {
+            System.out.println(strs[i]);
+        }
+    }
+
+    @Test
+    public void testSplit2() {
+        String str = "1";
         String[] strs = str.split("_");
         for (int i = 0; i < strs.length; i++) {
             System.out.println(strs[i]);
@@ -67,6 +79,11 @@ public class StringTest {
     }
 
     @Test
+    public void testJoin() {
+        System.out.println(String.join(File.separator, "hello", "world"));
+    }
+
+    @Test
     public void testFormat() {
         String desc = "hello, {}";
         String str = String.format(desc, "world");
@@ -93,5 +110,32 @@ public class StringTest {
             e.printStackTrace();
         }
         System.out.println(b);
+    }
+
+    @Test
+    public void testSwitch() {
+        System.out.println(switchFirstChar("hello"));
+    }
+
+    private String switchFirstChar(String string) {
+        char firstChar = string.charAt(0);
+        String re = string;
+        if(firstChar >= 'a' && firstChar <= 'z') {
+            char replace = (char) (firstChar - 32);
+            re = replace + string.substring(1);
+        }
+        return re;
+    }
+
+    @Test
+    public void testStartWithNumber() {
+        System.out.println(startWithNumber("123:{ID:Hero}"));
+        System.out.println(startWithNumber("aaa"));
+        System.out.println(startWithNumber("43"));
+        System.out.println(startWithNumber("042:"));
+    }
+
+    public boolean startWithNumber(String string) {
+        return Pattern.matches("^\\d+.*", string);
     }
 }

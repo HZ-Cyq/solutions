@@ -1,2 +1,3 @@
-package jvm.zy;public class HelloWorld {
+package jvm.zy;
+public class HelloWorld {
 }

@@ -3,6 +3,7 @@ package javabase.set;
 import com.google.common.collect.Sets;
 import org.junit.Test;
 
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Random;
 import java.util.Set;
@@ -34,5 +35,11 @@ public class SetTest {
             set.remove(2);
             System.out.println(next);
         }
+    }
+
+    @Test
+    public void testIterator() {
+        HashSet<Integer> set = new HashSet<>();
+
     }
 }
