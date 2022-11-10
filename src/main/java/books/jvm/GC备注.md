@@ -1,6 +1,6 @@
 | 表头1                 | 表头2                  |
 | ----------------------- | ------------------------ |
-| -XX:PrintFlagsInitial | 打印所有GC参数的默认值 |
+| -XX:+PrintFlagsInitial | 打印所有GC参数的默认值 |
 | -XX:PrintGCDetails    | 打印GC的详细信息       |
 
 

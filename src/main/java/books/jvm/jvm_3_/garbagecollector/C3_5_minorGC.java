@@ -9,10 +9,14 @@ public class C3_5_minorGC {
      * @param args
      */
     public static void main(String[] args) {
-        byte[] array;
-        for (int i = 0; i < 100; i++) {
-            array = new byte[1 * MB];
-            System.out.println(array.length);
-        }
+        byte[] array1, array2, array3, array4;
+        array1 = new byte[2 * MB];
+        System.out.println("allocate array1 over");
+        array2 = new byte[2 * MB];
+        System.out.println("allocate array2 over");
+        array3 = new byte[2 * MB];
+        System.out.println("allocate array3 over");
+        array4 = new byte[4 * MB];
+        System.out.println("allocate array4 over");
     }
 }
