@@ -1,0 +1,15 @@
+package books.onjava8.f19_type_info.class_info;
+
+/**
+ * @author chenyuqun
+ * @date 2021/5/12 8:12 下午
+ */
+public class Toy {
+    Toy() {
+
+    }
+
+    Toy(int i) {
+
+    }
+}
