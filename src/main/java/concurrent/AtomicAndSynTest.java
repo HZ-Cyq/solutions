@@ -1,7 +1,5 @@
 package concurrent;
 
-import sun.misc.Unsafe;
-import test.A;
 
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;

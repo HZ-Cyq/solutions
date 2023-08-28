@@ -4,13 +4,12 @@ import com.alibaba.fastjson.JSONObject;
 import mobinusi.HandlerMethodCode;
 import mobinusi.Player;
 import mobinusi.service.EquipService;
-import netscape.javascript.JSObject;
 
 @HandlerAnnotation(handlerCode = HandlerMethodCode.EQUIP_CARD_1000_00)
 public class EquipHandler implements ConsumeMsgHandler {
 
     @HandlerMethodAnnotation(methodCode = HandlerMethodCode.EQUIP_CARD_EQUIP_1000_01, desc = "穿上装备")
-    public JSObject equip(Player player, JSONObject json) {
+    public JSONObject equip(Player player, JSONObject json) {
         // 解析json
         Integer pos = json.getInteger("pos");
         String equipCardId = json.getString("equipCardId");
