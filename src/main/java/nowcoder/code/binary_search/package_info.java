@@ -32,13 +32,14 @@ import nowcoder.code.binary_search.rotating_array.*;
  * 4.你可以使用O(logN)的时间复杂度实现此问题吗？
  * {@link Bm19Solution#main(String[])}
  *
- * 20 数组中的逆序对(todo 待ac)
+ * 20 数组中的逆序对(todo hard难度，可以多看看)
  * 在数组中的两个数字，如果前面一个数字大于后面的数字，则这两个数字组成一个逆序对。输入一个数组,求出这个数组中的逆序对的总数P。并将P对1000000007取
  * 模的结果输出。 即输出P mod 1000000007 数据范围： ; 对于 的数据, 对于 的数据, 数组中所有数字的值满足 要求：空间复杂度 ，时间复杂度
  *  Related Topics 数组
  * 示例:
  * 输入:[1,2,3,4,5,6,7,0]
  * 输出:7
+ * {@link Bm20Solution#main(String[])}
  *
  * 21 旋转数组的最小数字
  * 有一个长度为 n 的非降序数组，比如[1,2,3,4,5]，将它进行旋转，即把一个数组最开始的若干个元素搬到数组的末尾，变成一个旋转数组，比如变成了[3,4
@@ -63,6 +64,7 @@ import nowcoder.code.binary_search.rotating_array.*;
  * 示例:
  * 输入:"1.1","2.1"
  * 输出:-1
+ * {@link Bm22Solution#main(String[])}
  *
  * leetcode中的二分题目
  *    旋转数组专题
@@ -85,6 +87,7 @@ import nowcoder.code.binary_search.rotating_array.*;
  *          [154]寻找旋转排序数组中的最小值II
  *          描述：{@link package_info#leetcode154()}
  *          AC:{@link LeetCode154#main(String[])}
+ *
  */
 public class package_info {
     /**

@@ -11,70 +11,78 @@ import java.io.*;
  */
 public class Bm20Solution {
     public static void main(String[] args) throws IOException {
+//        Bm20Solution bm20Solution = new Bm20Solution();
+//        String inputPath = ".\\Bm20_input.txt";
+//        FileReader reader = new FileReader(inputPath);
+//        BufferedReader bufferedReader = new BufferedReader(reader);
+//        String s = bufferedReader.readLine();
+//        JSONArray jsonArray = JSONObject.parseObject(s, JSONArray.class);
+//        int[] nums = jsonArray.stream().mapToInt(ele -> (int) ele).toArray();
+//        int reversePairsNum = bm20Solution.reversePairs(nums, 0, nums.length - 1);
+        int[] nums = new int[]{1,2,1,2,1};
         Bm20Solution bm20Solution = new Bm20Solution();
-        String inputPath = ".\\Bm20_input.txt";
-        FileReader reader = new FileReader(inputPath);
-        BufferedReader bufferedReader = new BufferedReader(reader);
-        String s = bufferedReader.readLine();
-        JSONArray jsonArray = JSONObject.parseObject(s, JSONArray.class);
-        int[] nums = jsonArray.stream().mapToInt(ele -> (int) ele).toArray();
-        int reversePairsNum = bm20Solution.reversePairs(nums, 0, nums.length - 1);
-        System.out.println(reversePairsNum);
+        System.out.println(bm20Solution.reversePairs(nums));
     }
 
-
-    /**
-     * @param nums
-     * @param begin
-     * @return 返回[begin, end]里的逆序对，并且[begin, end]排好序。
-     */
-    public int reversePairs(int[] nums, int begin, int end) {
-        if(begin == end) {
+    public int reversePairs(int[] nums) {
+        if(nums == null || nums.length <= 1) {
             return 0;
         }
-        if(begin == end - 1) {
-            // !! 这里是小于或等于
+        int[] temp = new int[nums.length];
+        long re = reversePairs0(nums, 0, nums.length - 1, temp);
+
+        System.out.println(re);
+        int re1 = (int) (re % 1000000007);
+        System.out.println(re1);
+        return  re1;
+    }
+
+    public long reversePairs0(int[] nums, int begin, int end, int[] temp) {
+        if(begin == end) {
+            return 0;
+        } else if(begin == end - 1) {
             if(nums[begin] <= nums[end]) {
                 return 0;
             } else {
-                bringForward(nums, begin, end);
+                int tempVal = nums[begin];
+                nums[begin] = nums[end];
+                nums[end] = tempVal;
                 return 1;
             }
         }
         int mid = begin + (end - begin) / 2;
-        int previousNum = reversePairs(nums, begin, mid);
-        int followingNum = reversePairs(nums, mid + 1, end);
-
-        int p = begin ;
-        int q = mid + 1;
+        long leftReversePairs = reversePairs0(nums, begin, mid, temp);
+        long rightReversePairs = reversePairs0(nums, mid + 1, end, temp);
         int totalAddNum = 0;
-        // 一次迭代之后，p（包括）之前的值是有序的，左边部分在q（不包括）之前的数都挪到了正确的位置
-        while (p < q && q <= end) {
-            // !! 这里是小于或等于
-            if(nums[p] <= nums[q]) {
+        int p = begin;
+        int q = mid + 1;
+        int index = p;
+        // 一次迭代之后，将左边或者右边的一个数复制到temp数组中
+        // temp数组的[p,index)位置是有序的，如果是右边的数挪到了temp数组里，说明p后面的数都比q大，逆转数增加（mid - p + 1）个
+        while (p <= mid || q <= end) {
+            if(p > mid) {
+                temp[index++] = nums[q];
+                totalAddNum += mid - p + 1;
+                q ++;
+            } else if(q > end) {
+                temp[index++] = nums[p];
                 p ++;
             } else {
-                // 将q位置的值挪到p位置
-                bringForward(nums, p, q);
-                totalAddNum += (q - p);
-                p++;
-                q++;
+                if(nums[p] <= nums[q]){
+                    temp[index++] = nums[p];
+                    p ++;
+                } else {
+                    temp[index++] = nums[q];
+                    totalAddNum += mid - p + 1;
+                    q ++;
+                }
             }
         }
-        return previousNum + followingNum + totalAddNum;
+        // 将temp数组复制到nums中
+        for(int i = begin; i <= end; i++) {
+            nums[i] = temp[i];
+        }
+        return leftReversePairs + rightReversePairs + totalAddNum % (1000000007);
     }
 
-    /**
-     * 将srcIndex位置的值挪到destIndex位置，[destIndex. srcIndex)位置的值都往后挪一位
-     * @param nums
-     * @param destIndex
-     * @param srcIndex
-     */
-    public void bringForward(int nums[], int destIndex, int srcIndex) {
-        int tempVal = nums[srcIndex];
-        for (int i = srcIndex - 1; i >= destIndex; i--) {
-            nums[i + 1] = nums[i];
-        }
-        nums[destIndex] = tempVal;
-    }
 }
